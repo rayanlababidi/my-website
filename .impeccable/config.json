@@ -1,0 +1,93 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-color",
+        "value": "#fff",
+        "createdAt": "2026-09-03T14:06:17.786Z",
+        "reason": "builder: functional overrides, not surface palette — ::selection text color against the amber highlight, and the print stylesheet's literal white background"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#000",
+        "createdAt": "2026-09-03T14:06:17.830Z",
+        "reason": "builder: print stylesheet's literal black text override, not part of the on-screen surface palette"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.375rem",
+        "createdAt": "2026-09-03T14:06:17.876Z",
+        "reason": "builder: ceiling of the .t-h3 discipline-title clamp — an existing named heading role, just not spelled out literally in the summarized DESIGN.md ramp"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "15px",
+        "createdAt": "2026-09-03T14:06:17.919Z",
+        "reason": "builder: nav wordmark / text-link component size, already documented in design.json's Nav Rail and Text Link component specs at this exact value"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "12px",
+        "createdAt": "2026-09-03T14:06:17.962Z",
+        "reason": "builder: nav menu link and mobile-drawer footer micro-label size, consistent bespoke UI-label step"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.8rem",
+        "createdAt": "2026-09-03T14:06:18.008Z",
+        "reason": "builder: floor of the mobile drawer link's display-scale clamp, a legitimate distinct component size for the full-screen mobile menu"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "12.5px",
+        "createdAt": "2026-09-03T14:06:18.054Z",
+        "reason": "builder: hero tag row / record-location mono micro-label size"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.9rem",
+        "createdAt": "2026-09-03T14:06:18.099Z",
+        "reason": "builder: floor of the Engineering-at-Scale numeral clamp, a component headline distinct from the core display/headline roles"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.1rem",
+        "createdAt": "2026-09-03T14:06:18.144Z",
+        "reason": "builder: floor of the Selected-Experience record-title clamp"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.25rem",
+        "createdAt": "2026-09-03T14:06:18.189Z",
+        "reason": "builder: shared component-subhead size reused deliberately by the Method step word, Timeline title and Education institution name"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": ".9375rem",
+        "createdAt": "2026-09-03T14:06:18.233Z",
+        "reason": "builder: Timeline description size, intentionally a step below body text for a denser list row"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "14.5px",
+        "createdAt": "2026-09-03T14:06:18.279Z",
+        "reason": "builder: Credential name and Education-recognition list item size"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "7.5rem",
+        "createdAt": "2026-09-03T14:06:18.326Z",
+        "reason": "builder: ceiling of the Contact section's closing name treatment, a deliberate one-off larger than the hero's own display ceiling for the page's final signature moment"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.1875rem",
+        "createdAt": "2026-09-03T14:06:18.373Z",
+        "reason": "builder: Contact 'Practice' list line size"
+      }
+    ]
+  }
+}

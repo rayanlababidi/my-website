@@ -1,0 +1,12 @@
+{
+  "name": "Rayan Lababidi — Commissioning & Tuning Engineer",
+  "short_name": "Rayan Lababidi",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F5F7F9",
+  "theme_color": "#14181D",
+  "icons": [
+    { "src": "/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

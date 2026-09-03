@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-03T00:00:00Z",
+  "title": "Design System: Rayan Lababidi — The Data Plate",
+  "extensions": {
+    "colorMeta": {
+      "amber": { "role": "primary", "displayName": "Amber (Text)", "canonical": "#8F4C12", "tonalRamp": ["#2A1704", "#4A2809", "#6B380D", "#8F4C12", "#B26018", "#C97A2E", "#DB9A55", "#E3A458"] },
+      "amber-bar": { "role": "primary", "displayName": "Amber (Bar)", "canonical": "#C97A2E", "tonalRamp": ["#3A2308", "#5C370F", "#804C16", "#A45F1F", "#C97A2E", "#D68C48", "#E3A458", "#EFC08A"] },
+      "amber-lit": { "role": "primary", "displayName": "Amber (Lit)", "canonical": "#D6934A", "tonalRamp": ["#4A3212", "#6B481B", "#8F5F26", "#B47934", "#C7893F", "#D6934A", "#E0A868", "#F0C287"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#F5F7F9", "tonalRamp": ["#14181D", "#333B44", "#5B646D", "#8B939B", "#D7DCE1", "#E4E8EC", "#ECEFF2", "#F5F7F9"] },
+      "paper-2": { "role": "neutral", "displayName": "Paper (Tonal Band)", "canonical": "#ECEFF2", "tonalRamp": ["#14181D", "#333B44", "#5B646D", "#8B939B", "#D7DCE1", "#E4E8EC", "#ECEFF2", "#F5F7F9"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#14181D", "tonalRamp": ["#14181D", "#333B44", "#5B646D", "#8B939B", "#D7DCE1", "#E4E8EC", "#ECEFF2", "#F5F7F9"] },
+      "void": { "role": "neutral", "displayName": "Void", "canonical": "#171B20", "tonalRamp": ["#171B20", "#20262C", "#2C333A", "#4A535D", "#838D96", "#AEB6BE", "#D6DBDF", "#F3F5F7"] },
+      "void-2": { "role": "neutral", "displayName": "Void (Frame Fill)", "canonical": "#20262C", "tonalRamp": ["#171B20", "#20262C", "#2C333A", "#4A535D", "#838D96", "#AEB6BE", "#D6DBDF", "#F3F5F7"] },
+      "lit": { "role": "neutral", "displayName": "Lit", "canonical": "#F3F5F7", "tonalRamp": ["#171B20", "#20262C", "#2C333A", "#4A535D", "#838D96", "#AEB6BE", "#D6DBDF", "#F3F5F7"] },
+      "rule": { "role": "neutral", "displayName": "Rule (Light)", "canonical": "#D7DCE1", "tonalRamp": ["#14181D", "#333B44", "#5B646D", "#8B939B", "#D7DCE1", "#E4E8EC", "#ECEFF2", "#F5F7F9"] },
+      "rule-dark": { "role": "neutral", "displayName": "Rule (Dark)", "canonical": "#2C333A", "tonalRamp": ["#171B20", "#20262C", "#2C333A", "#4A535D", "#838D96", "#AEB6BE", "#D6DBDF", "#F3F5F7"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Hero Display", "purpose": "Name lockup only — hero and contact close." },
+      "headline": { "displayName": "Section Display", "purpose": "Every section h2." },
+      "title": { "displayName": "Subsection Title", "purpose": "Discipline/subsection headers within a section." },
+      "lede": { "displayName": "Lede", "purpose": "One opening paragraph per major section, 34em max." },
+      "body": { "displayName": "Body", "purpose": "Running prose." },
+      "label": { "displayName": "Label", "purpose": "Field names, group headers — never data values." },
+      "data": { "displayName": "Data / Mono", "purpose": "Every literal measured fact: plate rows, tags, dates, platform names, credentials." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out-slow", "value": "cubic-bezier(.19,1,.22,1)", "purpose": "Default reveal easing for nearly every element on the page (.9s), and hover/link transitions." },
+      { "name": "ease-io", "value": "cubic-bezier(.45,0,.15,1)", "purpose": "Nav show/hide and background/border-color crossfades." },
+      { "name": "ease-snap", "value": "cubic-bezier(.16,1,.3,1)", "purpose": "The signature stamp-in for hero data-plate rows only (.38s) — deliberately distinct from ease-out-slow." }
+    ],
+    "breakpoints": [
+      { "name": "grid-collapse", "value": "980px" },
+      { "name": "nav-collapse", "value": "820px" },
+      { "name": "fine-grid-collapse", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Data Plate",
+      "kind": "custom",
+      "refersTo": "data-plate",
+      "description": "Signature stamped-fact widget: hairline border, amber corner ticks, label/value rows. Appears once in the hero (role/employer/focus/based).",
+      "html": "<div class=\"ds-plate\"><div class=\"ds-plate__row\"><span class=\"ds-plate__k\">Role</span><span class=\"ds-plate__v ds-plate__v--now\">Commissioning &amp; Tuning Engineer</span></div><div class=\"ds-plate__row\"><span class=\"ds-plate__k\">Employer</span><span class=\"ds-plate__v\">Siemens Energy</span></div><div class=\"ds-plate__row\"><span class=\"ds-plate__k\">Focus</span><span class=\"ds-plate__v\">Gas Turbines · Power Gen.</span></div></div>",
+      "css": ".ds-plate{ position:relative; border:1px solid #D7DCE1; background:#ECEFF2; padding:28px; font-family:'Archivo',sans-serif; } .ds-plate::before{ content:''; position:absolute; top:-1px; left:-1px; width:14px; height:14px; border-top:2px solid #C97A2E; border-left:2px solid #C97A2E; } .ds-plate::after{ content:''; position:absolute; bottom:-1px; right:-1px; width:14px; height:14px; border-bottom:2px solid #C97A2E; border-right:2px solid #C97A2E; } .ds-plate__row{ display:flex; justify-content:space-between; gap:20px; padding-block:10px; } .ds-plate__row + .ds-plate__row{ border-top:1px solid #D7DCE1; } .ds-plate__k{ font-weight:600; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#5B646D; } .ds-plate__v{ font-family:'Roboto Mono',monospace; font-size:13.5px; color:#14181D; text-align:right; } .ds-plate__v--now{ color:#8F4C12; }"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Hairline-bordered monospace fact chip used for the Core Expertise row.",
+      "html": "<span class=\"ds-tag\">Combustion Tuning</span>",
+      "css": ".ds-tag{ display:inline-block; border:1px solid #D7DCE1; padding:10px 20px; font-family:'Roboto Mono',monospace; font-size:13px; letter-spacing:.01em; color:#333B44; }"
+    },
+    {
+      "name": "Nav Rail",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Fixed top rail with condensed wordmark and uppercase link row; amber underline grows in on hover/active.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav__word\" href=\"/\">Rayan Lababidi</a><div class=\"ds-nav__menu\"><a class=\"ds-nav__link ds-nav__link--here\" href=\"#profile\">Profile</a><a class=\"ds-nav__link\" href=\"#expertise\">Expertise</a></div></nav>",
+      "css": ".ds-nav{ display:flex; align-items:center; justify-content:space-between; gap:30px; padding:14px 24px; background:rgba(245,247,249,.88); backdrop-filter:saturate(140%) blur(14px); border-bottom:1px solid #E4E8EC; } .ds-nav__word{ font-family:'Big Shoulders Text',sans-serif; font-weight:600; text-transform:uppercase; font-size:15px; letter-spacing:.02em; color:#14181D; text-decoration:none; } .ds-nav__menu{ display:flex; gap:44px; } .ds-nav__link{ position:relative; font-family:'Archivo',sans-serif; font-size:12px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:#14181D; text-decoration:none; opacity:.68; padding-bottom:4px; transition:opacity .35s cubic-bezier(.45,0,.15,1); } .ds-nav__link::after{ content:''; position:absolute; left:0; right:0; bottom:0; height:2px; background:#C97A2E; transform:scaleX(0); transform-origin:right; transition:transform .5s cubic-bezier(.19,1,.22,1); } .ds-nav__link:hover{ opacity:1; } .ds-nav__link:hover::after{ transform:scaleX(1); transform-origin:left; } .ds-nav__link--here{ opacity:1; } .ds-nav__link--here::after{ transform:scaleX(1); } .ds-nav__link:focus-visible{ outline:2px solid #C97A2E; outline-offset:3px; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "The system's only interactive affordance in place of a button — underline with a directional arrow that nudges on hover.",
+      "html": "<a class=\"ds-lk\" href=\"mailto:hello@rayanlababidi.com\">hello@rayanlababidi.com <span class=\"ds-lk__arrow\">&#8594;</span></a>",
+      "css": ".ds-lk{ display:inline-flex; align-items:baseline; gap:.6em; font-family:'Archivo',sans-serif; font-size:15px; font-weight:600; color:#14181D; text-decoration:none; padding-bottom:6px; border-bottom:1px solid #262D34; transition:border-color .5s cubic-bezier(.45,0,.15,1), color .3s cubic-bezier(.45,0,.15,1); } .ds-lk__arrow{ display:inline-block; transition:transform .5s cubic-bezier(.19,1,.22,1); } .ds-lk:hover{ border-color:#D6934A; color:#D6934A; } .ds-lk:hover .ds-lk__arrow{ transform:translateX(4px); } .ds-lk:focus-visible{ outline:2px solid #C97A2E; outline-offset:3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Data Plate",
+    "overview": "The page proves credibility the way a nameplate proves a machine's rating: precise, stamped facts read at a glance, verified rather than sold. It refuses the incumbent site's soft editorial-magazine register (italic serif, broadsheet hairlines) in favor of a condensed-grotesk, engineering-record voice. The nameplate is a typographic and spacing discipline, not a literal metal prop — there is no rivet texture, no embossed chrome, no skeuomorphic hardware anywhere in the shipped CSS. The one recurring \"stamped\" object is the hairline-bordered data-plate widget with amber corner ticks; everything else is quiet, high-legibility, editorial-grade type on a flat paper/void ground.\n\nDensity is calm: generous vertical rhythm between bands (--s7/--s8), tight internal rhythm inside stamped rows (--s2). Motion is almost entirely a slow, single fade/rise (.9s cubic-bezier ease-out) with one deliberate exception — the hero data-plate rows \"stamp\" in on a fast snap easing (.38s, cubic-bezier(.16,1,.3,1)), distinct from every other reveal on the page. That contrast is the system's one signature motion moment and is not repeated elsewhere.",
+    "keyCharacteristics": [
+      "Condensed grotesk display (Big Shoulders Display/Text, uppercase, tight leading) paired with a warm humanist sans (Archivo) for body copy and a tabular monospace (Roboto Mono) reserved strictly for data/measurement values.",
+      "Graphite/steel/paper neutrals, dark-void alternate sections, exactly one amber accent spent only on the current/active state.",
+      "Flat surfaces, no shadows, no radius anywhere — depth comes from tonal banding (paper → paper-2 → void → void-2) and hairline rule borders.",
+      "One signature widget (the data plate: hairline border, amber corner ticks, label/value rows) recurs as the system's stamped-fact motif.",
+      "No eyebrows or kickers anywhere in the build; section headers stand alone."
+    ],
+    "rules": [
+      { "name": "The One Amber Rule", "body": "Amber is spent only on the current/active state — the live role in the hero plate, the \"Present\" year in the timeline, hover/focus/selection accents. It never decorates a static fact.", "section": "colors" },
+      { "name": "The No-Prop Rule", "body": "The nameplate is a discipline of typography and spacing, not a literal object. Don't add rivets, embossed/metal textures, or skeuomorphic chrome to sell the metaphor — the hairline border and corner ticks are the entire vocabulary.", "section": "colors" },
+      { "name": "The Mono-Is-Data Rule", "body": "Roboto Mono renders only measured/verifiable facts — role, employer, platform family, dates, credentials, tag labels. It never appears in narrative prose or headings.", "section": "typography" },
+      { "name": "The Condensed-Uppercase-for-Headers Rule", "body": "Every section header (.t-hero, .t-display, .t-h2, .t-h3) is a condensed grotesk in uppercase. Body and lede copy are always sentence case in Archivo — the two families never trade roles.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "No section, card, or widget ever lifts on a shadow. Separation is tonal-band contrast or a hairline border, never elevation.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do reserve Roboto Mono exclusively for data/measured values — the Mono-Is-Data Rule above.",
+      "Do spend amber only on the current/active state (The One Amber Rule).",
+      "Do use the data-plate widget (hairline border, amber corner ticks, label/value rows) for any new \"stamped fact\" block; don't invent a second competing stamped-widget style.",
+      "Do keep corners square and shadows absent everywhere; separation comes from tonal banding and 1px hairlines only.",
+      "Do use the fast snap easing (.38s, cubic-bezier(.16,1,.3,1)) only for the data-plate stamp-in; every other reveal uses the slow fade/rise (.9s, cubic-bezier(.19,1,.22,1))."
+    ],
+    "donts": [
+      "Don't add rivets, embossed metal texture, or literal hardware chrome to sell the nameplate metaphor — the border and corner ticks are the entire vocabulary (The No-Prop Rule).",
+      "Don't add eyebrows or kickers above headings. None exist in the shipped build; section titles stand alone.",
+      "Don't introduce a filled/bordered button component. The system's only interactive affordance is the underline text link with a directional arrow glyph (→ / ↗).",
+      "Don't apply border-radius anywhere; the system's corner language is uniformly square.",
+      "Don't use amber as a general decorative color on static facts — it signals \"current\" and nothing else."
+    ]
+  }
+}
