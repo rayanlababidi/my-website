@@ -21,146 +21,29 @@
 <meta property="og:description" content="This address does not resolve to anything on rayanlababidi.com.">
 <meta property="og:image" content="https://rayanlababidi.com/og-cover.jpg">
 
+<link rel="stylesheet" href="/assets/site.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800&family=Big+Shoulders+Text:wght@500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-/* ============================================================================
-   RAYAN LABABIDI — THE DATA PLATE (shared system; see index.html)
-   ============================================================================ */
-.rlb{
-  --paper:      #F5F7F9;
-  --paper-2:    #ECEFF2;
-  --ink:        #14181D;
-  --ink-75:     #333B44;
-  --ink-50:     #5B646D;
-  --ink-30:     #8B939B;
-  --rule:       #D7DCE1;
-  --rule-soft:  #E4E8EC;
-
-  --void:       #171B20;
-  --void-2:     #20262C;
-  --lit:        #F3F5F7;
-  --lit-70:     #AEB6BE;
-  --lit-45:     #838D96;
-  --rule-dark:  #2C333A;
-
-  --amber:      #8F4C12;
-  --amber-bar:  #C97A2E;
-  --amber-lit:  #D6934A;
-
-  --display: 'Big Shoulders Display', 'Arial Narrow', Arial, sans-serif;
-  --head:    'Big Shoulders Text', 'Arial Narrow', Arial, sans-serif;
-  --sans:    'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  --mono:    'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-
-  --out: cubic-bezier(.19,1,.22,1);
-  --io:  cubic-bezier(.45,0,.15,1);
-
-  --s1: clamp(6px,   .15vw +  5.4px,   8px);
-  --s2: clamp(10px,  .30vw +  8.8px,  14px);
-  --s3: clamp(14px,  .45vw + 12.2px,  20px);
-  --s4: clamp(20px,  .70vw + 16.6px,  30px);
-  --s5: clamp(28px,  1.10vw + 22.6px, 44px);
-  --s6: clamp(38px,  1.60vw + 30.8px, 60px);
-
-  --edge: clamp(22px, 4vw + 8px, 72px);
-  --maxw: 1360px;
-  --stick: clamp(88px, 3vw + 76px, 116px);
-}
-.rlb, .rlb *, .rlb *::before, .rlb *::after{ box-sizing:border-box; }
-.rlb{
-  margin:0; background:var(--paper); color:var(--ink);
-  font-family:var(--sans); font-size:16px; line-height:1.6; font-weight:400;
-  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-  text-rendering:optimizeLegibility; overflow-x:clip;
-}
-html{ overflow-x:clip; scrollbar-color:#8B939B #ECEFF2; scrollbar-width:thin; }
-body{ margin:0; background:#F5F7F9; }
-:where(.rlb) :where(h1,p){ margin:0; padding:0; }
-.rlb a{ color:inherit; text-decoration:none; }
-.rlb button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
-.rlb ::selection{ background:var(--amber-bar); color:#fff; }
-.rlb :focus-visible{ outline:2px solid var(--amber-bar); outline-offset:3px; }
-.rlb{ caret-color:var(--amber-bar); }
-.rlb-dark{ caret-color:var(--amber-lit); }
-.rlb-dark :focus-visible{ outline-color:var(--amber-lit); }
-
-.rlb-skip{
-  position:absolute; top:-100px; left:var(--edge); z-index:200;
-  background:var(--ink); color:var(--paper); padding:var(--s2) var(--s3);
-  font-family:var(--sans); font-size:13px; letter-spacing:.04em;
-}
-.rlb-skip:focus{ top:var(--s3); }
-.rlb-w{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:var(--edge); }
-.rlb-dark{ background:var(--void); color:var(--lit); }
-
-.rlb .t-hero{
-  font-family:var(--display); font-weight:800; text-transform:uppercase;
-  font-size:clamp(2.6rem, 4.6vw + 1.3rem, 5.5rem); line-height:.94; letter-spacing:-.01em;
-}
-.rlb .t-lede{
-  font-family:var(--sans); font-weight:400;
-  font-size:clamp(1.15rem, .55vw + .98rem, 1.4375rem); line-height:1.52; letter-spacing:-.004em;
-  color:var(--lit-70); max-width:34em;
-}
-.rlb .t-label{
-  font-family:var(--sans); font-weight:600; font-size:11px; letter-spacing:.14em;
-  text-transform:uppercase; color:var(--lit-45);
-}
-
-.rlb-nav{
-  position:fixed; inset:0 0 auto 0; z-index:100; padding-block:var(--s3);
-  border-bottom:1px solid var(--rule-dark); color:var(--lit);
-}
-.rlb-nav__in{ display:flex; align-items:center; justify-content:space-between; gap:var(--s4); }
-.rlb-word{
-  font-family:var(--head); font-weight:600; text-transform:uppercase;
-  font-size:15px; letter-spacing:.02em; white-space:nowrap;
-}
-
-.rlb-lost{ min-height:100svh; display:flex; align-items:center; padding-top:var(--stick); }
-.rlb-lost__l{ margin-top:var(--s6); display:flex; gap:var(--s5); flex-wrap:wrap; }
-.rlb-lk{
-  display:inline-flex; align-items:baseline; gap:.6em; font-family:var(--sans); font-size:15px; font-weight:600;
-  padding-bottom:var(--s1); border-bottom:1px solid var(--rule-dark); transition:border-color .5s var(--io), color .3s var(--io);
-  color:var(--lit);
-}
-.rlb-lk span{ transition:transform .5s var(--out); display:inline-block; }
-.rlb-lk:hover span{ transform:translateX(4px); }
-.rlb-lk:hover{ border-color:var(--amber-lit); color:var(--amber-lit); }
-
-.rlb-js [data-r]{
-  opacity:0; transform:translate3d(0,16px,0);
-  transition:opacity .9s var(--out), transform .9s var(--out); transition-delay:var(--d,0ms);
-}
-.rlb-js [data-r].lit{ opacity:1; transform:none; }
-
-@media (prefers-reduced-motion:reduce){
-  .rlb *{ animation-duration:.001ms !important; transition-duration:.001ms !important; }
-  .rlb-js [data-r]{ opacity:1 !important; transform:none !important; }
-}
-</style>
 </head>
 <body>
 <a class="rlb-skip" href="#main">Skip to content</a>
 <div class="rlb">
 
-<nav class="rlb-nav">
+<nav class="rlb-nav rlb-dark set" id="nav">
   <div class="rlb-w rlb-nav__in">
     <a class="rlb-word" href="/" aria-label="Rayan Lababidi, home">Rayan Lababidi</a>
   </div>
 </nav>
 
 <main id="main">
-<section class="rlb-lost rlb-dark">
+<section class="rlb-hero rlb-dark" style="min-height:100svh; display:flex; align-items:center;">
   <div class="rlb-w">
     <h1 class="t-hero" data-r style="--d:60ms" aria-label="This page does not exist.">This page<br>does not exist.</h1>
-    <p class="t-lede" data-r style="margin-top:var(--s5); --d:120ms">
+    <p class="t-lede" data-r style="margin-top:var(--s5); --d:120ms; color:var(--lit-70)">
       The address doesn't resolve to anything on this site. The main page is the best place to start.
     </p>
-    <div class="rlb-lost__l" data-r style="--d:180ms">
+    <div class="rlb-close__links" style="margin-top:var(--s6); display:flex; flex-direction:row; gap:var(--s5); flex-wrap:wrap;" data-r style="--d:180ms">
       <a class="rlb-lk" href="/">Return home <span aria-hidden="true">&#8594;</span></a>
       <a class="rlb-lk" href="mailto:hello@rayanlababidi.com">Email <span aria-hidden="true">&#8594;</span></a>
     </div>
@@ -169,11 +52,6 @@ body{ margin:0; background:#F5F7F9; }
 </main>
 
 </div>
-<script>
-(function () {
-  'use strict';
-  [].slice.call(document.querySelectorAll('[data-r]')).forEach(function (t) { t.classList.add('lit'); });
-})();
-</script>
+<script src="/assets/motion.js"></script>
 </body>
 </html>

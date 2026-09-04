@@ -87,6 +87,18 @@
         "value": "1.1875rem",
         "createdAt": "2026-09-03T14:06:18.373Z",
         "reason": "builder: Contact 'Practice' list line size"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.3rem",
+        "createdAt": "2026-09-04T03:27:27.519Z",
+        "reason": "new .t-pull type role added deliberately this iteration for article pull-statements, not on the original ramp"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.4rem",
+        "createdAt": "2026-09-04T03:27:27.566Z",
+        "reason": "new .rlb-triad__i span label added deliberately this iteration for the combustion-tuning balance diagram, not on the original ramp"
       }
     ]
   }

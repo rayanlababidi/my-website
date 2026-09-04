@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Combustion Tuning - Rayan Lababidi</title>
+<meta name="description" content="A field guide to combustion tuning: balancing emissions, stability and performance conceptually, the fuel-air relationship, ambient effects, and why tuning relies on trends rather than assumptions.">
+<meta name="author" content="Rayan Lababidi">
+<meta name="theme-color" content="#F5F7F9">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rayanlababidi.com/expertise/combustion-tuning.html">
+
+<script>document.documentElement.className += ' rlb-js';</script>
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rayan Lababidi">
+<meta property="og:url" content="https://rayanlababidi.com/expertise/combustion-tuning.html">
+<meta property="og:title" content="Combustion Tuning - Rayan Lababidi">
+<meta property="og:description" content="Balancing emissions, stability and performance conceptually: the fuel-air relationship and why tuning relies on trends, not assumptions.">
+<meta property="og:image" content="https://rayanlababidi.com/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Combustion Tuning - Rayan Lababidi">
+<meta name="twitter:description" content="Balancing emissions, stability and performance conceptually: the fuel-air relationship and why tuning relies on trends, not assumptions.">
+<meta name="twitter:image" content="https://rayanlababidi.com/og-cover.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Combustion Tuning",
+  "description": "A field guide to combustion tuning: balancing emissions, stability and performance conceptually, and why tuning relies on trends rather than assumptions.",
+  "url": "https://rayanlababidi.com/expertise/combustion-tuning.html",
+  "author": { "@id": "https://rayanlababidi.com/#rayan-lababidi" },
+  "publisher": { "@id": "https://rayanlababidi.com/#rayan-lababidi" },
+  "mainEntityOfPage": "https://rayanlababidi.com/expertise/combustion-tuning.html",
+  "about": "Combustion tuning of industrial gas turbines"
+}
+</script>
+
+<link rel="preload" as="style" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800&family=Big+Shoulders+Text:wght@500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+</head>
+<body>
+<a class="rlb-skip" href="#main">Skip to content</a>
+<div class="rlb">
+<div class="rlb-progress" id="progress" aria-hidden="true"></div>
+
+<nav class="rlb-nav" id="nav">
+  <div class="rlb-w rlb-nav__in">
+    <a class="rlb-word" href="/" aria-label="Rayan Lababidi, home">Rayan Lababidi</a>
+    <div class="rlb-menu" id="menu">
+      <a href="/#profile">Profile</a>
+      <a href="/#expertise">Expertise</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#timeline">Timeline</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <button class="rlb-burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><span></span></button>
+  </div>
+</nav>
+<div class="rlb-drawer" id="drawer">
+  <a href="/#profile">Profile</a>
+  <a href="/#expertise">Expertise</a>
+  <a href="/#experience">Experience</a>
+  <a href="/#timeline">Timeline</a>
+  <a href="/#contact">Contact</a>
+  <div class="rlb-drawer__f">
+    <span>ORLANDO, FL</span>
+    <span>SIEMENS ENERGY</span>
+  </div>
+</div>
+
+<main id="main">
+
+<header class="rlb-article-hero">
+  <div class="rlb-w">
+    <a class="rlb-article-hero__back" href="/#expertise" data-r><span aria-hidden="true">←</span> Portfolio</a>
+    <p class="t-label rlb-article-hero__kicker" data-r style="--d:60ms">Discipline 02 / 06: Field Guide</p>
+    <h1 class="t-hero rlb-article-hero__title" data-mask style="--d:100ms">Combustion<br>Tuning</h1>
+    <p class="t-lede rlb-article-hero__dek" data-r style="--d:160ms">
+      Combustion tuning is a balancing act between three things that don't naturally cooperate:
+      clean emissions, a stable flame, and full performance. This is the conceptual shape of that
+      trade-off, without any platform-specific values.
+    </p>
+    <div class="rlb-article-hero__meta" data-r style="--d:220ms">
+      <span><b>Field Guide</b></span>
+      <span>General Industry Principles</span>
+      <span>Combustion Systems</span>
+    </div>
+  </div>
+</header>
+
+<article class="rlb-article">
+  <div class="rlb-w rlb-article__layout">
+    <nav class="rlb-article__rail" data-spy-list aria-label="Article sections">
+      <a href="#s1" data-spy-key="s1" class="active"><b>01</b> What Combustion Tuning Is</a>
+      <a href="#s2" data-spy-key="s2"><b>02</b> The Three-Way Balance</a>
+      <a href="#s3" data-spy-key="s3"><b>03</b> The Fuel-Air Relationship</a>
+      <a href="#s4" data-spy-key="s4"><b>04</b> Combustion Dynamics, Conceptually</a>
+      <a href="#s5" data-spy-key="s5"><b>05</b> Load &amp; Ambient Conditions</a>
+      <a href="#s6" data-spy-key="s6"><b>06</b> Why Trends, Not Assumptions</a>
+    </nav>
+
+    <div class="rlb-article__body">
+      <section class="rlb-article__section" id="s1" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">01</span><h2 class="rlb-article__section__t">What Combustion Tuning Is</h2></div>
+        <p class="t-body">Combustion tuning is the process of adjusting how fuel and air combine and burn inside a combustion system so the resulting flame meets several requirements simultaneously: it burns cleanly, it stays stable across a range of operating conditions, and it delivers the performance the equipment was designed for. None of those three outcomes is automatic, and improving one can quietly work against another.</p>
+        <p class="t-body">In general industry terms, tuning is less about finding one perfect setting and more about finding (and holding) a stable operating window that satisfies all three requirements together, across the full range of conditions the machine will actually see.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s2" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">02</span><h2 class="rlb-article__section__t">The Three-Way Balance</h2></div>
+        <p class="t-body">At a conceptual level, combustion tuning is a triangle. Push too far in one direction and one of the other two suffers:</p>
+        <div class="rlb-triad" data-r>
+          <div class="rlb-triad__i"><b>Corner A</b><span>Emissions</span></div>
+          <div class="rlb-triad__i"><b>Corner B</b><span>Flame Stability</span></div>
+          <div class="rlb-triad__i"><b>Corner C</b><span>Performance</span></div>
+        </div>
+        <p class="t-body">A leaner mixture generally reduces some emissions but can push a flame toward instability or increase others. A richer, more stable flame can improve performance margin but move emissions in the wrong direction. Tuning is the deliberate, iterative work of finding the region where all three constraints are satisfied at once, not just one of them optimized in isolation.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s3" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">03</span><h2 class="rlb-article__section__t">The Fuel-Air Relationship, Conceptually</h2></div>
+        <p class="t-body">Every combustion process depends on the ratio of fuel to air. Too little air for the fuel present, and combustion is incomplete: richer, hotter in some respects, and prone to producing more of certain emissions. Too much air relative to fuel, and the flame can become lean, less stable, and more sensitive to disturbances.</p>
+        <p class="t-body">Flame richness describes where in that range a given operating point sits. Tuning work generally involves nudging that ratio, in small controlled steps, while watching how the machine responds, never a single large change made on a guess.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s4" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">04</span><h2 class="rlb-article__section__t">Combustion Dynamics, Conceptually</h2></div>
+        <p class="t-body">Combustion is not a perfectly steady process. It has natural pressure fluctuations. Under most conditions those fluctuations are small and unremarkable. Under certain conditions, a fluctuation can begin to reinforce itself, growing in amplitude because it happens to align with how heat is being released. That self-reinforcing behavior is what's generally meant by combustion dynamics, and left unmanaged it can become a mechanical concern rather than just a performance one.</p>
+        <blockquote class="t-pull rlb-pull" data-r>Stability isn't the absence of motion. It's motion that stays bounded.</blockquote>
+        <p class="t-body">Part of tuning is recognizing the early signs of that kind of growth and adjusting the operating point before it becomes a problem, rather than after.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s5" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">05</span><h2 class="rlb-article__section__t">Effects of Load &amp; Ambient Conditions</h2></div>
+        <p class="t-body">A tuning point is never permanent, because the conditions around it are never fixed. As electrical or mechanical load changes, the fuel and air flows change with it, and the combustion process moves through a different part of its operating range. Ambient temperature, humidity, and even barometric pressure change the density and behavior of the incoming air, which shifts the same nominal fuel-air ratio to a different real-world result.</p>
+        <p class="t-body">This is why a stable operating window has to be verified across the range of load and ambient conditions the equipment will actually experience, not just at one convenient test point.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s6" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">06</span><h2 class="rlb-article__section__t">Why Tuning Relies on Trends, Not Assumptions</h2></div>
+        <p class="t-body">Good tuning work is built on data collected over time (trends) rather than a single instantaneous reading or an assumption carried over from a similar-looking machine. A single data point can be misleading; a trend shows whether a system is stable, drifting, or oscillating, and how it responds to a deliberate change.</p>
+        <p class="t-body">The discipline is to make one controlled adjustment, observe the machine's actual response through its trends and instrumentation, and confirm the result before making the next change, verifying the machine's real behavior rather than assuming it matches expectation.</p>
+      </section>
+    </div>
+  </div>
+</article>
+
+<footer class="rlb-article__foot">
+  <div class="rlb-w">
+    <h2 class="t-display" data-r>Explore Another Discipline</h2>
+    <div class="rlb-explore" data-r style="--d:80ms">
+      <a href="/expertise/commissioning.html"><b>01</b><span>Mechanical Commissioning</span></a>
+      <a href="/expertise/controls-instrumentation.html"><b>03</b><span>Controls &amp; Instrumentation</span></a>
+      <a href="/expertise/root-cause-troubleshooting.html"><b>04</b><span>Root-Cause Troubleshooting</span></a>
+      <a href="/expertise/outage-execution.html"><b>05</b><span>Outage Execution</span></a>
+      <a href="/expertise/field-engineering.html"><b>06</b><span>Field Engineering</span></a>
+    </div>
+    <a class="rlb-btn rlb-article__back" href="/">Back to Portfolio <span aria-hidden="true">→</span></a>
+  </div>
+</footer>
+
+<div class="rlb-article-foot-bar rlb-w">
+  <span>© <span id="yr">2026</span> Rayan Lababidi</span>
+  <div><a href="mailto:hello@rayanlababidi.com">Email</a><a href="/">Portfolio</a></div>
+</div>
+
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="/assets/motion.js"></script>
+</body>
+</html>

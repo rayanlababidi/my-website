@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Root-Cause Troubleshooting - Rayan Lababidi</title>
+<meta name="description" content="A field guide to root-cause troubleshooting: observation, evidence, hypotheses, controlled testing and verification, a general engineering philosophy for isolating cause from symptom.">
+<meta name="author" content="Rayan Lababidi">
+<meta name="theme-color" content="#F5F7F9">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rayanlababidi.com/expertise/root-cause-troubleshooting.html">
+
+<script>document.documentElement.className += ' rlb-js';</script>
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rayan Lababidi">
+<meta property="og:url" content="https://rayanlababidi.com/expertise/root-cause-troubleshooting.html">
+<meta property="og:title" content="Root-Cause Troubleshooting - Rayan Lababidi">
+<meta property="og:description" content="Observation, evidence, hypotheses, controlled testing and verification, a general engineering philosophy for isolating cause from symptom.">
+<meta property="og:image" content="https://rayanlababidi.com/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Root-Cause Troubleshooting - Rayan Lababidi">
+<meta name="twitter:description" content="Observation, evidence, hypotheses, controlled testing and verification, a general engineering philosophy for isolating cause from symptom.">
+<meta name="twitter:image" content="https://rayanlababidi.com/og-cover.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Root-Cause Troubleshooting",
+  "description": "A field guide to root-cause troubleshooting: observation, evidence, hypotheses, controlled testing and verification.",
+  "url": "https://rayanlababidi.com/expertise/root-cause-troubleshooting.html",
+  "author": { "@id": "https://rayanlababidi.com/#rayan-lababidi" },
+  "publisher": { "@id": "https://rayanlababidi.com/#rayan-lababidi" },
+  "mainEntityOfPage": "https://rayanlababidi.com/expertise/root-cause-troubleshooting.html",
+  "about": "Root-cause analysis methodology"
+}
+</script>
+
+<link rel="preload" as="style" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800&family=Big+Shoulders+Text:wght@500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+</head>
+<body>
+<a class="rlb-skip" href="#main">Skip to content</a>
+<div class="rlb">
+<div class="rlb-progress" id="progress" aria-hidden="true"></div>
+
+<nav class="rlb-nav" id="nav">
+  <div class="rlb-w rlb-nav__in">
+    <a class="rlb-word" href="/" aria-label="Rayan Lababidi, home">Rayan Lababidi</a>
+    <div class="rlb-menu" id="menu">
+      <a href="/#profile">Profile</a>
+      <a href="/#expertise">Expertise</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#timeline">Timeline</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <button class="rlb-burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><span></span></button>
+  </div>
+</nav>
+<div class="rlb-drawer" id="drawer">
+  <a href="/#profile">Profile</a>
+  <a href="/#expertise">Expertise</a>
+  <a href="/#experience">Experience</a>
+  <a href="/#timeline">Timeline</a>
+  <a href="/#contact">Contact</a>
+  <div class="rlb-drawer__f">
+    <span>ORLANDO, FL</span>
+    <span>SIEMENS ENERGY</span>
+  </div>
+</div>
+
+<main id="main">
+
+<header class="rlb-article-hero">
+  <div class="rlb-w">
+    <a class="rlb-article-hero__back" href="/#expertise" data-r><span aria-hidden="true">←</span> Portfolio</a>
+    <p class="t-label rlb-article-hero__kicker" data-r style="--d:60ms">Discipline 04 / 06: Field Guide</p>
+    <h1 class="t-hero rlb-article-hero__title" data-mask style="--d:100ms">Root-Cause<br>Troubleshooting</h1>
+    <p class="t-lede rlb-article-hero__dek" data-r style="--d:160ms">
+      Troubleshooting isn't guessing until something works. It's a repeatable sequence
+      (observation, evidence, hypothesis, controlled testing, verification) that separates a real
+      cause from a convincing symptom.
+    </p>
+    <div class="rlb-article-hero__meta" data-r style="--d:220ms">
+      <span><b>Field Guide</b></span>
+      <span>General Engineering Philosophy</span>
+      <span>Diagnostic Method</span>
+    </div>
+  </div>
+</header>
+
+<article class="rlb-article">
+  <div class="rlb-w rlb-article__layout">
+    <nav class="rlb-article__rail" data-spy-list aria-label="Article sections">
+      <a href="#s1" data-spy-key="s1" class="active"><b>01</b> The Method</a>
+      <a href="#s2" data-spy-key="s2"><b>02</b> Trend Analysis</a>
+      <a href="#s3" data-spy-key="s3"><b>03</b> Symptom vs. Cause</a>
+      <a href="#s4" data-spy-key="s4"><b>04</b> Mechanical, Instrumentation, or Controls</a>
+      <a href="#s5" data-spy-key="s5"><b>05</b> One Variable at a Time</a>
+      <a href="#s6" data-spy-key="s6"><b>06</b> Documenting &amp; Communicating</a>
+    </nav>
+
+    <div class="rlb-article__body">
+      <section class="rlb-article__section" id="s1" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">01</span><h2 class="rlb-article__section__t">Observation → Evidence → Hypothesis → Test → Verification</h2></div>
+        <p class="t-body">This is the general sequence I apply to any unfamiliar problem, mechanical or otherwise. It starts with observation: collecting what the system is actually doing, without yet deciding what it means. From there, evidence is gathered (data, readings, physical inspection) that either supports or rules out a possible explanation.</p>
+        <div class="rlb-flow" data-r>
+          <div class="rlb-flow__step"><b>Step</b><span>Observe</span></div>
+          <div class="rlb-flow__step"><b>Step</b><span>Gather Evidence</span></div>
+          <div class="rlb-flow__step"><b>Step</b><span>Form Hypothesis</span></div>
+          <div class="rlb-flow__step"><b>Step</b><span>Controlled Test</span></div>
+          <div class="rlb-flow__step"><b>Step</b><span>Verify</span></div>
+        </div>
+        <p class="t-body">A hypothesis is a specific, testable explanation, not a hunch acted on directly. It gets tested deliberately, and the result either confirms it or eliminates it, narrowing the field until the real cause is verified rather than merely suspected.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s2" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">02</span><h2 class="rlb-article__section__t">Trend Analysis</h2></div>
+        <p class="t-body">A single reading is a snapshot; a trend is a story. Looking at how a value has behaved over time (rising, falling, oscillating, stepping suddenly) reveals far more than any one data point can. Trends show whether a condition is stable, developing, or already past a threshold, and they often point directly at when something changed, which is frequently the fastest route to why it changed.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s3" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">03</span><h2 class="rlb-article__section__t">Distinguishing Symptoms from Causes</h2></div>
+        <blockquote class="t-pull rlb-pull" data-r>The loudest alarm is rarely the first domino.</blockquote>
+        <p class="t-body">A symptom is what you notice: a reading out of range, an alarm, an unexpected shutdown. A cause is what actually produced it. The two are frequently several steps apart, and treating a symptom directly, without finding the cause behind it, tends to produce a problem that returns, sometimes worse, later.</p>
+        <p class="t-body">Good troubleshooting resists the pull toward the most visible symptom and instead asks what upstream condition could produce every symptom being observed, together, as one coherent explanation.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s4" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">04</span><h2 class="rlb-article__section__t">Mechanical, Instrumentation, or Controls?</h2></div>
+        <p class="t-body">Most industrial faults sort into one of three broad categories: a genuine mechanical problem (something physically worn, misaligned, or failed), an instrumentation problem (a sensor or signal path giving inaccurate information), or a controls/logic problem (the system responding exactly as programmed to inputs that don't reflect the real intent). The same symptom can originate from any of the three, which is why isolating which category you're actually in comes early in the process, not late.</p>
+        <p class="t-body"><em>Hypothetically:</em> a temperature reading that spikes and then flatlines at an implausible value is more likely a failed sensor than a genuine thermal event, but that's a hypothesis to test, physically, not a conclusion to assume.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s5" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">05</span><h2 class="rlb-article__section__t">Changing One Variable at a Time</h2></div>
+        <p class="t-body">When multiple things are adjusted at once and the problem changes, it's impossible to know which change actually mattered, or whether two changes partially cancelled each other out and masked the real answer. Controlled testing means isolating a single variable, making one deliberate change, and observing the result before making the next one. It's slower in the moment and dramatically faster overall, because it never has to be re-verified or second-guessed later.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s6" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">06</span><h2 class="rlb-article__section__t">Documenting Evidence &amp; Communicating Under Pressure</h2></div>
+        <p class="t-body">Every hypothesis tested, ruled out, or confirmed is worth recording, not just the final answer. That record protects against re-testing the same dead end twice, and it lets someone else pick up the investigation exactly where it left off.</p>
+        <p class="t-body">Troubleshooting in the field rarely happens in a quiet room. It happens with a schedule pressing, people waiting for an answer, and a machine that isn't running. Communicating status accurately while the problem is still open (what's known, what's still suspected, what's being tested next) is as much a part of the discipline as the diagnosis itself.</p>
+      </section>
+    </div>
+  </div>
+</article>
+
+<footer class="rlb-article__foot">
+  <div class="rlb-w">
+    <h2 class="t-display" data-r>Explore Another Discipline</h2>
+    <div class="rlb-explore" data-r style="--d:80ms">
+      <a href="/expertise/commissioning.html"><b>01</b><span>Mechanical Commissioning</span></a>
+      <a href="/expertise/combustion-tuning.html"><b>02</b><span>Combustion Tuning</span></a>
+      <a href="/expertise/controls-instrumentation.html"><b>03</b><span>Controls &amp; Instrumentation</span></a>
+      <a href="/expertise/outage-execution.html"><b>05</b><span>Outage Execution</span></a>
+      <a href="/expertise/field-engineering.html"><b>06</b><span>Field Engineering</span></a>
+    </div>
+    <a class="rlb-btn rlb-article__back" href="/">Back to Portfolio <span aria-hidden="true">→</span></a>
+  </div>
+</footer>
+
+<div class="rlb-article-foot-bar rlb-w">
+  <span>© <span id="yr">2026</span> Rayan Lababidi</span>
+  <div><a href="mailto:hello@rayanlababidi.com">Email</a><a href="/">Portfolio</a></div>
+</div>
+
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="/assets/motion.js"></script>
+</body>
+</html>

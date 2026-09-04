@@ -78,437 +78,18 @@
 </script>
 
 <link rel="preload" as="image" imagesrcset="/images/rayan-portrait-620.jpg 620w, /images/rayan-portrait-960.jpg 960w, /images/rayan-portrait-1449.jpg 1449w" imagesizes="(max-width: 860px) 90vw, 640px" fetchpriority="high">
+<link rel="preload" as="style" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800&family=Big+Shoulders+Text:wght@500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-/* ============================================================================
-   RAYAN LABABIDI — THE DATA PLATE
-   An engineering-credibility portfolio. Every fact reads like data stamped on
-   an equipment nameplate: precise, condensed, verifiable — never a themed
-   prop. Graphite / steel / paper neutrals; one amber, spent only on the
-   current or active state.
-   ============================================================================ */
-.rlb{
-  --paper:      #F5F7F9;
-  --paper-2:    #ECEFF2;
-  --ink:        #14181D;
-  --ink-75:     #333B44;
-  --ink-50:     #5B646D;
-  --ink-30:     #8B939B;
-  --rule:       #D7DCE1;
-  --rule-soft:  #E4E8EC;
-
-  --void:       #171B20;   /* softened graphite, not pure black */
-  --void-2:     #20262C;   /* tonal surface one step up from void */
-  --lit:        #F3F5F7;
-  --lit-70:     #AEB6BE;
-  --lit-45:     #838D96;   /* text-safe on void, ~5.1:1 */
-  --rule-dark:  #2C333A;
-
-  --amber:      #8F4C12;   /* text-safe on paper, ~5.3:1 */
-  --amber-bar:  #C97A2E;   /* decorative bars / ticks on paper */
-  --amber-lit:  #D6934A;   /* restrained, text-safe on void, ~6.7:1 */
-
-  --display: 'Big Shoulders Display', 'Arial Narrow', Arial, sans-serif;
-  --head:    'Big Shoulders Text', 'Arial Narrow', Arial, sans-serif;
-  --sans:    'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  --mono:    'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-
-  --snap: cubic-bezier(.16,1,.3,1);
-  --out:  cubic-bezier(.19,1,.22,1);
-  --io:   cubic-bezier(.45,0,.15,1);
-
-  --s1: clamp(6px,   .15vw +  5.4px,   8px);
-  --s2: clamp(10px,  .30vw +  8.8px,  14px);
-  --s3: clamp(14px,  .45vw + 12.2px,  20px);
-  --s4: clamp(20px,  .70vw + 16.6px,  30px);
-  --s5: clamp(28px,  1.10vw + 22.6px, 44px);
-  --s6: clamp(38px,  1.60vw + 30.8px, 60px);
-  --s7: clamp(52px,  2.30vw + 42.2px, 84px);
-  --s8: clamp(72px,  3.20vw + 58.4px, 120px);
-
-  --edge: clamp(22px, 4vw + 8px, 72px);
-  --maxw: 1360px;
-  --stick: clamp(88px, 3vw + 76px, 116px);
-}
-
-.rlb, .rlb *, .rlb *::before, .rlb *::after{ box-sizing:border-box; }
-.rlb{
-  margin:0; background:var(--paper); color:var(--ink);
-  font-family:var(--sans); font-size:16px; line-height:1.6; font-weight:400;
-  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-  text-rendering:optimizeLegibility; overflow-x:clip;
-}
-html{ overflow-x:clip; scroll-behavior:smooth; scrollbar-color:#8B939B #ECEFF2; scrollbar-width:thin; }
-body{ margin:0; background:#F5F7F9; }
-:where(.rlb) :where(h1,h2,h3,h4,p,ul,ol,figure,dl,dd,dt){ margin:0; padding:0; }
-:where(.rlb) :where(ul,ol){ list-style:none; }
-.rlb a{ color:inherit; text-decoration:none; }
-.rlb img{ display:block; width:100%; height:auto; }
-.rlb button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
-.rlb ::selection{ background:var(--amber-bar); color:#fff; }
-.rlb :focus-visible{ outline:2px solid var(--amber-bar); outline-offset:3px; }
-.rlb{ caret-color:var(--amber-bar); }
-.rlb-dark{ caret-color:var(--amber-lit); }
-.rlb-dark :focus-visible{ outline-color:var(--amber-lit); }
-
-.rlb-skip{
-  position:absolute; top:-100px; left:var(--edge); z-index:200;
-  background:var(--ink); color:var(--paper); padding:var(--s2) var(--s3);
-  font-family:var(--sans); font-size:13px; letter-spacing:.04em;
-}
-.rlb-skip:focus{ top:var(--s3); }
-
-.rlb-w{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:var(--edge); }
-.rlb-band{ padding-block:var(--s8); }
-.rlb-tone{ background:var(--paper-2); }
-.rlb-dark{ background:var(--void); color:var(--lit); }
-.rlb-dark .rlb-sub{ color:var(--lit-70); }
-
-/* hairline rule with small tick marks at each end — the one drawing cue */
-.rlb-tick-rule{ position:relative; height:1px; background:var(--rule); }
-.rlb-tick-rule::before, .rlb-tick-rule::after{
-  content:''; position:absolute; top:-3px; width:1px; height:7px; background:var(--ink-30);
-}
-.rlb-tick-rule::before{ left:0; } .rlb-tick-rule::after{ right:0; }
-.rlb-dark .rlb-tick-rule{ background:var(--rule-dark); }
-.rlb-dark .rlb-tick-rule::before, .rlb-dark .rlb-tick-rule::after{ background:var(--lit-45); }
-
-/* ============================================================================
-   TYPE
-   ============================================================================ */
-.rlb .t-hero{
-  font-family:var(--display); font-weight:800;
-  font-size:clamp(2.6rem, 4.6vw + 1.3rem, 5.5rem); line-height:.94; letter-spacing:-.01em;
-  text-transform:uppercase;
-}
-.rlb .t-display{
-  font-family:var(--display); font-weight:700; text-transform:uppercase;
-  font-size:clamp(2rem, 2.6vw + 1.2rem, 3.4rem); line-height:.98; letter-spacing:-.005em;
-}
-.rlb .t-h2{
-  font-family:var(--head); font-weight:600; text-transform:uppercase;
-  font-size:clamp(1.5rem, 1.3vw + 1.12rem, 2.25rem); line-height:1.04; letter-spacing:0;
-}
-.rlb .t-h3{
-  font-family:var(--head); font-weight:600;
-  font-size:clamp(1.15rem, .4vw + 1.02rem, 1.375rem); line-height:1.2;
-}
-.rlb .t-lede{
-  font-family:var(--sans); font-weight:400;
-  font-size:clamp(1.15rem, .55vw + .98rem, 1.4375rem); line-height:1.52; letter-spacing:-.004em;
-  color:var(--ink-75); max-width:34em;
-}
-.rlb .t-body{
-  font-family:var(--sans); font-weight:400;
-  font-size:clamp(1rem, .16vw + .95rem, 1.0625rem); line-height:1.7; color:var(--ink-75);
-  max-width:36em;
-}
-.rlb .t-body + .t-body{ margin-top:1.1em; }
-.rlb .t-label{
-  font-family:var(--sans); font-weight:600; font-size:11px; letter-spacing:.14em;
-  text-transform:uppercase; color:var(--ink-50);
-}
-.rlb-dark .t-label{ color:var(--lit-45); }
-.rlb .t-mono{ font-family:var(--mono); font-variant-numeric:tabular-nums; }
-.rlb strong{ font-weight:600; color:var(--ink); }
-.rlb-dark strong{ color:var(--lit); }
-
-/* ============================================================================
-   NAVIGATION
-   ============================================================================ */
-.rlb-nav{
-  position:fixed; inset:0 0 auto 0; z-index:100; padding-block:var(--s3);
-  transition:transform .6s var(--out), background-color .45s var(--io), border-color .45s var(--io);
-  border-bottom:1px solid transparent;
-}
-.rlb-nav.hid{ transform:translateY(-102%); }
-.rlb-nav.set{
-  background:rgba(245,247,249,.88); -webkit-backdrop-filter:saturate(140%) blur(14px); backdrop-filter:saturate(140%) blur(14px);
-  border-bottom-color:var(--rule-soft);
-}
-.rlb-nav.inv{ color:var(--lit); }
-.rlb-nav.inv.set{ background:rgba(14,17,20,.82); border-bottom-color:var(--rule-dark); }
-.rlb-nav__in{ display:flex; align-items:center; justify-content:space-between; gap:var(--s4); }
-.rlb-word{
-  font-family:var(--head); font-weight:600; text-transform:uppercase;
-  font-size:15px; letter-spacing:.02em; white-space:nowrap;
-}
-.rlb-menu{ display:flex; align-items:center; gap:var(--s5); }
-.rlb-menu a{
-  font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:.09em; text-transform:uppercase;
-  position:relative; padding-block:4px; opacity:.68; transition:opacity .35s var(--io);
-}
-.rlb-menu a::after{
-  content:''; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--amber-bar);
-  transform:scaleX(0); transform-origin:right; transition:transform .5s var(--out);
-}
-.rlb-dark .rlb-menu a::after, .rlb-nav.inv .rlb-menu a::after{ background:var(--amber-lit); }
-.rlb-menu a:hover{ opacity:1; }
-.rlb-menu a:hover::after{ transform:scaleX(1); transform-origin:left; }
-.rlb-menu a.here{ opacity:1; }
-.rlb-menu a.here::after{ transform:scaleX(1); }
-
-.rlb-burger{ display:none; width:32px; height:32px; align-items:center; justify-content:center; }
-.rlb-burger span{ position:relative; display:block; width:20px; height:1px; background:currentColor; }
-.rlb-burger span::before,.rlb-burger span::after{
-  content:''; position:absolute; left:0; width:20px; height:1px; background:currentColor;
-  transition:transform .5s var(--out), top .3s var(--io);
-}
-.rlb-burger span::before{ top:-6px; } .rlb-burger span::after{ top:6px; }
-.rlb-nav.open .rlb-burger span{ background:transparent; }
-.rlb-nav.open .rlb-burger span::before{ top:0; transform:rotate(45deg); }
-.rlb-nav.open .rlb-burger span::after{ top:0; transform:rotate(-45deg); }
-
-.rlb-drawer{
-  position:fixed; inset:0; z-index:99; background:var(--void); color:var(--lit);
-  display:flex; flex-direction:column; justify-content:center; gap:var(--s2); padding:0 var(--edge);
-  opacity:0; visibility:hidden; transition:opacity .5s var(--io), visibility .5s;
-}
-.rlb-drawer.open{ opacity:1; visibility:visible; }
-.rlb-drawer a{
-  font-family:var(--display); font-weight:700; text-transform:uppercase;
-  font-size:clamp(1.8rem,3vw + .6rem,3rem); line-height:1.2;
-  opacity:0; transform:translateY(14px); transition:opacity .6s var(--out), transform .6s var(--out);
-}
-.rlb-drawer.open a{ opacity:1; transform:none; }
-.rlb-drawer__f{
-  position:absolute; left:var(--edge); right:var(--edge); bottom:var(--s6);
-  display:flex; justify-content:space-between; gap:var(--s3); flex-wrap:wrap;
-  font-family:var(--mono); font-size:12px; color:var(--lit-45);
-}
-
-/* ============================================================================
-   REVEALS — one signature moment (the plate stamps in, snap eased) plus a
-   single quiet reveal grammar everywhere else
-   ============================================================================ */
-.rlb-js .rlb [data-r]{
-  opacity:0; transform:translate3d(0,16px,0);
-  transition:opacity .9s var(--out), transform .9s var(--out); transition-delay:var(--d,0ms);
-}
-.rlb-js .rlb [data-r].lit{ opacity:1; transform:none; }
-.rlb-js .rlb [data-stamp]{
-  opacity:0; transform:translate3d(0,6px,0);
-  transition:opacity .38s var(--snap), transform .38s var(--snap); transition-delay:var(--d,0ms);
-}
-.rlb-js .rlb [data-stamp].lit{ opacity:1; transform:none; }
-
-/* ============================================================================
-   HERO
-   ============================================================================ */
-.rlb-hero{
-  position:relative; min-height:100svh; display:flex; align-items:center;
-  padding-top:var(--stick); padding-bottom:var(--s6);
-}
-.rlb-hero__grid{
-  width:100%; display:grid; grid-template-columns:minmax(0,7fr) minmax(0,5fr);
-  gap:var(--s7); align-items:center;
-}
-.rlb-hero__name{ font-size:0; } /* wrapper only */
-.rlb-hero__loc{ margin-top:var(--s3); }
-.rlb-hero__sub{ margin-top:var(--s3); }
-.rlb-hero__sub b{ font-weight:600; color:var(--ink); }
-.rlb-hero__tags{
-  margin-top:var(--s4); display:flex; flex-wrap:wrap; gap:var(--s2);
-  font-family:var(--mono); font-size:12.5px; color:var(--ink-50); letter-spacing:.01em;
-}
-.rlb-hero__tags span:not(:last-child)::after{ content:'·'; margin-left:var(--s2); color:var(--ink-30); }
-
-/* the stamped data plate */
-.rlb-plate{
-  position:relative; border:1px solid var(--rule); background:var(--paper-2);
-  padding:var(--s5) var(--s5);
-}
-.rlb-plate::before{
-  content:''; position:absolute; top:-1px; left:-1px; width:14px; height:14px;
-  border-top:2px solid var(--amber-bar); border-left:2px solid var(--amber-bar);
-}
-.rlb-plate::after{
-  content:''; position:absolute; bottom:-1px; right:-1px; width:14px; height:14px;
-  border-bottom:2px solid var(--amber-bar); border-right:2px solid var(--amber-bar);
-}
-.rlb-plate__row{ display:flex; justify-content:space-between; gap:var(--s3); padding-block:var(--s2); }
-.rlb-plate__row + .rlb-plate__row{ border-top:1px solid var(--rule); }
-.rlb-plate__k{ font-family:var(--sans); font-weight:600; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-50); }
-.rlb-plate__v{ font-family:var(--mono); font-size:13.5px; color:var(--ink); text-align:right; }
-.rlb-plate__v--now{ color:var(--amber); }
-
-.rlb-hero__foot{ margin-top:var(--s7); display:flex; align-items:baseline; justify-content:space-between; gap:var(--s3); flex-wrap:wrap; }
-.rlb-scroll{ font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-50); }
-
-/* ============================================================================
-   PORTRAIT FRAME — shared by hero + wherever a photo appears
-   ============================================================================ */
-.rlb-frame{ position:relative; overflow:hidden; background:var(--paper-2); border:1px solid var(--rule); }
-.rlb-frame img{ width:100%; height:100%; object-fit:cover; }
-.rlb-hero__fig{ aspect-ratio:4/5; }
-.rlb-dark .rlb-frame{ border-color:var(--rule-dark); background:var(--void-2); }
-
-/* ============================================================================
-   PROFILE
-   ============================================================================ */
-.rlb-profile__body{ margin-top:var(--s6); display:grid; grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:var(--s7); }
-
-/* ============================================================================
-   CORE EXPERTISE — stamped tag row
-   ============================================================================ */
-.rlb-tags{ margin-top:var(--s6); display:flex; flex-wrap:wrap; gap:var(--s3); }
-.rlb-tag{
-  border:1px solid var(--rule); padding:var(--s2) var(--s4);
-  font-family:var(--mono); font-size:13px; letter-spacing:.01em; color:var(--ink-75);
-}
-
-/* ============================================================================
-   FIELD ENGINEERING / COMMISSIONING
-   ============================================================================ */
-.rlb-comm__intro{ margin-top:var(--s5); max-width:40em; }
-.rlb-fig{ margin-block:var(--s7); aspect-ratio:16/7; }
-.rlb-disc{ border-top:1px solid var(--rule); }
-.rlb-disc__i{
-  display:grid; grid-template-columns:minmax(0,4fr) minmax(0,8fr); gap:var(--s6);
-  padding-block:var(--s6); border-bottom:1px solid var(--rule);
-}
-.rlb-disc__d{ max-width:38em; }
-.rlb-plat{ margin-top:var(--s7); display:flex; flex-wrap:wrap; gap:var(--s5) var(--s6); align-items:baseline; }
-.rlb-plat b{ font-family:var(--mono); font-size:14px; color:var(--ink); }
-
-/* ============================================================================
-   SCALE — dark
-   ============================================================================ */
-.rlb-scale__l{ display:grid; gap:var(--s6); margin-top:var(--s7); }
-.rlb-scale__i{
-  display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:var(--s6);
-  align-items:baseline; padding-bottom:var(--s6); border-bottom:1px solid var(--rule-dark);
-}
-.rlb-scale__i:last-child{ border-bottom:0; padding-bottom:0; }
-.rlb-scale__n{
-  font-family:var(--display); font-weight:700; text-transform:uppercase;
-  font-size:clamp(1.9rem, 2.6vw + 1rem, 3.25rem); line-height:1; color:var(--lit);
-}
-.rlb-scale__d{ font-family:var(--sans); font-size:1.0625rem; line-height:1.68; color:var(--lit-70); max-width:34em; }
-
-/* ============================================================================
-   SELECTED ENGINEERING EXPERIENCE — anonymized, record style
-   ============================================================================ */
-.rlb-rec{ margin-top:var(--s7); border-top:1px solid var(--rule); }
-.rlb-rec__i{ display:grid; grid-template-columns:minmax(0,3fr) minmax(0,9fr); gap:var(--s6); padding-block:var(--s6); border-bottom:1px solid var(--rule); }
-.rlb-rec__loc{ font-family:var(--mono); font-size:13px; color:var(--ink-50); letter-spacing:.01em; }
-.rlb-rec__t{ font-family:var(--head); font-weight:600; font-size:clamp(1.1rem,.3vw+1rem,1.3125rem); margin-top:var(--s2); }
-.rlb-rec__d{ margin-top:var(--s2); max-width:38em; }
-.rlb-rec__note{ margin-top:var(--s6); max-width:40em; }
-
-/* ============================================================================
-   METHOD
-   ============================================================================ */
-.rlb-meth{ margin-top:var(--s7); border-top:1px solid var(--rule); }
-.rlb-meth__i{ display:grid; grid-template-columns:minmax(140px,1fr) minmax(0,3fr); gap:var(--s6); align-items:baseline; padding-block:var(--s5); border-bottom:1px solid var(--rule); }
-.rlb-meth__n{ font-family:var(--mono); font-size:13px; color:var(--ink-50); }
-.rlb-meth__w{ font-family:var(--head); font-weight:600; font-size:clamp(1.25rem,.5vw+1.05rem,1.625rem); }
-.rlb-meth__d{ max-width:36em; }
-
-/* ============================================================================
-   TIMELINE
-   ============================================================================ */
-.rlb-time{ margin-top:var(--s7); border-top:1px solid var(--rule); }
-.rlb-time__i{
-  display:grid; grid-template-columns:minmax(84px,1fr) minmax(0,4fr) minmax(0,5fr);
-  gap:var(--s5); align-items:baseline; padding-block:var(--s5); border-bottom:1px solid var(--rule);
-}
-.rlb-time__y{ font-family:var(--mono); font-size:14px; font-weight:500; color:var(--ink-50); }
-.rlb-time__y--now{ color:var(--amber); }
-.rlb-time__t{ font-family:var(--head); font-weight:600; font-size:clamp(1.05rem,.3vw+.95rem,1.25rem); }
-.rlb-time__d{ font-family:var(--sans); font-size:.9375rem; line-height:1.6; color:var(--ink-50); max-width:32em; }
-
-/* ============================================================================
-   TOOLKIT & CREDENTIALS / EDUCATION
-   ============================================================================ */
-.rlb-cred__g{ margin-top:var(--s7); display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--s6); }
-.rlb-cred__h{ padding-bottom:var(--s2); border-bottom:1px solid var(--ink-30); }
-.rlb-cred__i{ padding-block:var(--s3); border-bottom:1px solid var(--rule-soft); }
-.rlb-cred__i:last-child{ border-bottom:0; }
-.rlb-cred__n{ font-family:var(--sans); font-weight:600; font-size:14.5px; color:var(--ink); }
-.rlb-cred__m{ margin-top:var(--s1); font-family:var(--sans); font-size:13px; color:var(--ink-50); }
-.rlb-cred__s{ margin-top:var(--s1); font-family:var(--mono); font-size:11.5px; color:var(--ink-50); }
-
-.rlb-edu{ margin-top:var(--s6); display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:var(--s6); align-items:start; border:1px solid var(--rule); padding:var(--s6); }
-.rlb-edu__n{ font-family:var(--head); font-weight:600; font-size:clamp(1.25rem,.5vw+1.05rem,1.625rem); }
-.rlb-edu__m{ margin-top:var(--s2); }
-.rlb-edu__l{ display:grid; gap:var(--s3); }
-.rlb-edu__l li{ font-family:var(--sans); font-size:14.5px; color:var(--ink-75); }
-.rlb-edu__l b{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-50); margin-bottom:2px; }
-
-/* ============================================================================
-   BEYOND — one short humanizing strip, no separate section weight
-   ============================================================================ */
-.rlb-beyond{ padding-block:var(--s6); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
-.rlb-beyond p{ max-width:44em; }
-
-/* ============================================================================
-   CONTACT / CLOSE
-   ============================================================================ */
-.rlb-close__name{ font-size:clamp(2.6rem,7vw+1rem,7.5rem); }
-.rlb-close__g{ margin-top:var(--s7); display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--s6); }
-.rlb-close__lines span{ display:block; font-family:var(--head); font-weight:600; font-size:1.1875rem; color:var(--lit-70); }
-.rlb-close__links{ display:grid; gap:var(--s3); justify-items:start; }
-.rlb-lk{
-  display:inline-flex; align-items:baseline; gap:.6em; font-family:var(--sans); font-size:15px; font-weight:600;
-  padding-bottom:var(--s1); border-bottom:1px solid var(--rule-dark); transition:border-color .5s var(--io), color .3s var(--io);
-}
-.rlb-lk span{ transition:transform .5s var(--out); display:inline-block; }
-.rlb-lk:hover span{ transform:translateX(4px); }
-.rlb-lk:hover{ border-color:var(--amber-lit); color:var(--amber-lit); }
-
-.rlb-foot{ margin-top:var(--s8); padding-top:var(--s5); border-top:1px solid var(--rule-dark); }
-.rlb-foot__d{ font-family:var(--sans); font-size:11.5px; line-height:1.7; color:var(--lit-45); max-width:42em; }
-.rlb-foot__r{ margin-top:var(--s5); display:flex; justify-content:space-between; gap:var(--s3) var(--s5); flex-wrap:wrap; font-family:var(--mono); font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--lit-45); }
-.rlb-foot__r a:hover{ color:var(--lit); }
-.rlb-foot__r div{ display:flex; gap:var(--s4); flex-wrap:wrap; }
-
-/* ============================================================================
-   RESPONSIVE
-   ============================================================================ */
-@media (max-width:980px){
-  .rlb-hero__grid{ grid-template-columns:1fr; gap:var(--s6); }
-  .rlb-hero__fig{ order:-1; aspect-ratio:16/10; }
-  .rlb-profile__body{ grid-template-columns:1fr; gap:var(--s5); }
-  .rlb-disc__i{ grid-template-columns:1fr; gap:var(--s2); }
-  .rlb-scale__i{ grid-template-columns:1fr; gap:var(--s2); }
-  .rlb-rec__i{ grid-template-columns:1fr; gap:var(--s2); }
-  .rlb-meth__i{ grid-template-columns:1fr; gap:var(--s2); }
-  .rlb-edu{ grid-template-columns:1fr; }
-  .rlb-close__g{ grid-template-columns:1fr; gap:var(--s5); }
-}
-@media (max-width:820px){
-  .rlb-menu{ display:none; }
-  .rlb-burger{ display:flex; }
-}
-@media (max-width:640px){
-  .rlb-time__i{ grid-template-columns:64px 1fr; }
-  .rlb-time__d{ grid-column:2/3; margin-top:var(--s1); }
-  .rlb-cred__g{ grid-template-columns:1fr; }
-  .rlb-hero__foot{ align-items:flex-start; }
-  .rlb-plate__row{ flex-direction:column; align-items:flex-start; gap:var(--s1); }
-  .rlb-plate__v{ text-align:left; }
-}
-@media (pointer:coarse){
-  .rlb-menu a, .rlb-lk, .rlb-foot__r a{ min-height:24px; }
-}
-@media (prefers-reduced-motion:reduce){
-  html{ scroll-behavior:auto; }
-  .rlb *, .rlb *::before, .rlb *::after{ animation-duration:.001ms !important; transition-duration:.001ms !important; }
-  .rlb-js .rlb [data-r], .rlb-js .rlb [data-stamp]{ opacity:1 !important; transform:none !important; }
-}
-@media print{
-  .rlb-nav, .rlb-drawer, .rlb-scroll{ display:none !important; }
-  .rlb, .rlb-dark{ background:#fff !important; color:#000 !important; }
-}
-</style>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 </head>
 <body>
 <a class="rlb-skip" href="#main">Skip to content</a>
 <div class="rlb">
+<div class="rlb-progress" id="progress" aria-hidden="true"></div>
 
 <nav class="rlb-nav" id="nav">
   <div class="rlb-w rlb-nav__in">
@@ -542,7 +123,7 @@ body{ margin:0; background:#F5F7F9; }
   <div class="rlb-w rlb-hero__grid">
 
     <div>
-      <h1 class="t-hero" data-r aria-label="Rayan Lababidi">Rayan<br>Lababidi</h1>
+      <h1 class="t-hero" data-mask aria-label="Rayan Lababidi">Rayan<br>Lababidi</h1>
       <p class="t-body rlb-hero__sub" data-r style="--d:80ms"><b>Commissioning &amp; Tuning Engineer</b>, Siemens Energy</p>
       <div class="rlb-hero__tags" data-r style="--d:140ms">
         <span>Gas Turbines</span><span>Power Generation</span><span>Field Engineering</span>
@@ -555,8 +136,8 @@ body{ margin:0; background:#F5F7F9; }
     </div>
 
     <div>
-      <figure class="rlb-frame rlb-hero__fig" data-r style="--d:100ms">
-        <img srcset="/images/rayan-portrait-620.jpg 620w, /images/rayan-portrait-960.jpg 960w, /images/rayan-portrait-1449.jpg 1449w"
+      <figure class="rlb-frame rlb-hero__fig" data-wipe style="--d:100ms">
+        <img data-parallax srcset="/images/rayan-portrait-620.jpg 620w, /images/rayan-portrait-960.jpg 960w, /images/rayan-portrait-1449.jpg 1449w"
              sizes="(max-width: 980px) 90vw, 42vw"
              src="/images/rayan-portrait-960.jpg" width="1449" height="1086" alt="Rayan Lababidi" fetchpriority="high" decoding="async">
       </figure>
@@ -581,52 +162,102 @@ body{ margin:0; background:#F5F7F9; }
 
 
 <!-- ═══════════════════════════════ PROFILE ═══════════════════════════════ -->
-<section class="rlb-band" id="profile">
+<section class="rlb-band" id="profile" data-zone="profile">
   <div class="rlb-w">
     <h2 class="t-display" data-r>Engineering Profile</h2>
-    <div class="rlb-profile__body">
-      <p class="t-lede" data-r>
+    <div class="rlb-profile__lede">
+      <p class="t-lede" data-mask style="margin-top:var(--s6)">
         I'm a mechanical engineer specializing in the commissioning and combustion tuning
         of industrial gas turbines, working directly at operating power plants on
         machines already in service for Siemens Energy.
       </p>
-      <div data-r style="--d:100ms">
-        <p class="t-body">
-          My career took a deliberate shape. Most engineering graduates begin one or two
-          steps removed from the equipment they're responsible for. I chose field-based
-          power generation engineering instead. An analysis I reach in the morning gets
-          tested by the machine that same afternoon, in front of the people who own it,
-          on a schedule that won't move.
-        </p>
-        <p class="t-body">
-          The work spans commissioning, combustion tuning, controls and troubleshooting on
-          large combustion turbines. It rewards precision, clear communication under
-          pressure, and verifying instead of assuming.
-        </p>
-      </div>
+    </div>
+    <div class="rlb-profile__body">
+      <p class="t-body" data-r>
+        My career took a deliberate shape. Most engineering graduates begin one or two
+        steps removed from the equipment they're responsible for. I chose field-based
+        power generation engineering instead. An analysis I reach in the morning gets
+        tested by the machine that same afternoon, in front of the people who own it,
+        on a schedule that won't move.
+      </p>
+      <p class="t-body" data-r style="--d:100ms">
+        The work spans commissioning, combustion tuning, controls and troubleshooting on
+        large combustion turbines. It rewards precision, clear communication under
+        pressure, and verifying instead of assuming.
+      </p>
     </div>
   </div>
 </section>
 
 
 <!-- ═══════════════════════════════ CORE EXPERTISE ═══════════════════════════════ -->
-<section class="rlb-band rlb-tone" id="expertise">
+<section class="rlb-band rlb-tone" id="expertise" data-zone="expertise">
   <div class="rlb-w">
     <h2 class="t-display" data-r>Core Expertise</h2>
-    <div class="rlb-tags" data-r style="--d:80ms">
-      <span class="rlb-tag">Commissioning</span>
-      <span class="rlb-tag">Combustion Tuning</span>
-      <span class="rlb-tag">Controls &amp; Instrumentation</span>
-      <span class="rlb-tag">Root-Cause Troubleshooting</span>
-      <span class="rlb-tag">Outage Execution</span>
-      <span class="rlb-tag">Field Engineering</span>
+    <p class="t-body" data-r style="--d:80ms">Six disciplines, each carried from field practice into a short conceptual field guide.</p>
+    <div class="rlb-xgrid" data-r style="--d:120ms">
+      <a class="rlb-xcard" href="/expertise/commissioning.html">
+        <div class="rlb-xcard__tex" aria-hidden="true"></div>
+        <div class="rlb-xcard__top"><span class="rlb-xcard__n">01</span><span class="rlb-xcard__arrow" aria-hidden="true">↗</span></div>
+        <div>
+          <h3 class="rlb-xcard__t">Mechanical Commissioning</h3>
+          <p class="rlb-xcard__d">Installation through verified function, proving every system against the control system before startup.</p>
+        </div>
+        <span class="rlb-xcard__cta">Explore <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="rlb-xcard" href="/expertise/combustion-tuning.html">
+        <div class="rlb-xcard__tex" aria-hidden="true"></div>
+        <div class="rlb-xcard__top"><span class="rlb-xcard__n">02</span><span class="rlb-xcard__arrow" aria-hidden="true">↗</span></div>
+        <div>
+          <h3 class="rlb-xcard__t">Combustion Tuning</h3>
+          <p class="rlb-xcard__d">Balancing emissions, stability and performance across the full load range.</p>
+        </div>
+        <span class="rlb-xcard__cta">Explore <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="rlb-xcard" href="/expertise/controls-instrumentation.html">
+        <div class="rlb-xcard__tex" aria-hidden="true"></div>
+        <div class="rlb-xcard__top"><span class="rlb-xcard__n">03</span><span class="rlb-xcard__arrow" aria-hidden="true">↗</span></div>
+        <div>
+          <h3 class="rlb-xcard__t">Controls &amp; Instrumentation</h3>
+          <p class="rlb-xcard__d">Feedback loops, permissives and calibration, where a mechanical fault and a logic fault can look identical.</p>
+        </div>
+        <span class="rlb-xcard__cta">Explore <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="rlb-xcard" href="/expertise/root-cause-troubleshooting.html">
+        <div class="rlb-xcard__tex" aria-hidden="true"></div>
+        <div class="rlb-xcard__top"><span class="rlb-xcard__n">04</span><span class="rlb-xcard__arrow" aria-hidden="true">↗</span></div>
+        <div>
+          <h3 class="rlb-xcard__t">Root-Cause Troubleshooting</h3>
+          <p class="rlb-xcard__d">Reproduce, isolate, evidence, correct, verify, record.</p>
+        </div>
+        <span class="rlb-xcard__cta">Explore <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="rlb-xcard" href="/expertise/outage-execution.html">
+        <div class="rlb-xcard__tex" aria-hidden="true"></div>
+        <div class="rlb-xcard__top"><span class="rlb-xcard__n">05</span><span class="rlb-xcard__arrow" aria-hidden="true">↗</span></div>
+        <div>
+          <h3 class="rlb-xcard__t">Outage Execution</h3>
+          <p class="rlb-xcard__d">Fixed windows, coordinated disciplines, and return to service on schedule.</p>
+        </div>
+        <span class="rlb-xcard__cta">Explore <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="rlb-xcard" href="/expertise/field-engineering.html">
+        <div class="rlb-xcard__tex" aria-hidden="true"></div>
+        <div class="rlb-xcard__top"><span class="rlb-xcard__n">06</span><span class="rlb-xcard__arrow" aria-hidden="true">↗</span></div>
+        <div>
+          <h3 class="rlb-xcard__t">Field Engineering</h3>
+          <p class="rlb-xcard__d">Engineering decisions made where the machine actually runs.</p>
+        </div>
+        <span class="rlb-xcard__cta">Explore <span aria-hidden="true">→</span></span>
+      </a>
     </div>
   </div>
 </section>
 
+<div class="rlb-w"><div class="rlb-divider"></div></div>
 
 <!-- ═══════════════════════════════ FIELD ENGINEERING / COMMISSIONING ═══════════════════════════════ -->
-<section class="rlb-band" id="commissioning">
+<section class="rlb-band" id="commissioning" data-zone="expertise">
   <div class="rlb-w">
     <h2 class="t-display" data-r>Field Engineering &amp; Commissioning</h2>
     <p class="t-body rlb-comm__intro" data-r style="--d:80ms">
@@ -638,8 +269,8 @@ body{ margin:0; background:#F5F7F9; }
     </p>
   </div>
 
-  <figure class="rlb-frame rlb-fig" data-r>
-    <img srcset="/images/turbine-hall-640.jpg 640w, /images/turbine-hall-1024.jpg 1024w, /images/turbine-hall-1537.jpg 1537w"
+  <figure class="rlb-frame rlb-fig" data-wipe>
+    <img data-parallax srcset="/images/turbine-hall-640.jpg 640w, /images/turbine-hall-1024.jpg 1024w, /images/turbine-hall-1537.jpg 1537w"
          sizes="100vw" src="/images/turbine-hall-1024.jpg" width="1537" height="1023"
          alt="Gas turbine hall during a commissioning outage" loading="lazy" decoding="async">
   </figure>
@@ -681,9 +312,11 @@ body{ margin:0; background:#F5F7F9; }
 
 
 <!-- ═══════════════════════════════ ENGINEERING AT SCALE ═══════════════════════════════ -->
-<section class="rlb-band rlb-dark" id="scale">
-  <div class="rlb-w">
-    <h2 class="t-display" data-r>Engineering at Scale</h2>
+<section class="rlb-band rlb-dark" id="scale" data-zone="expertise">
+  <div class="rlb-w rlb-scale__layout">
+    <div class="rlb-scale__pin">
+      <h2 class="t-display" data-r>Engineering at Scale</h2>
+    </div>
     <div class="rlb-scale__l">
       <div class="rlb-scale__i" data-r>
         <p class="rlb-scale__n" aria-label="Hundreds of megawatts">Hundreds of<br>megawatts</p>
@@ -707,7 +340,7 @@ body{ margin:0; background:#F5F7F9; }
 
 
 <!-- ═══════════════════════════════ SELECTED ENGINEERING EXPERIENCE ═══════════════════════════════ -->
-<section class="rlb-band" id="experience">
+<section class="rlb-band" id="experience" data-zone="experience">
   <div class="rlb-w">
     <h2 class="t-display" data-r>Selected Engineering Experience</h2>
     <p class="t-body rlb-rec__note" data-r style="--d:80ms">
@@ -744,32 +377,43 @@ body{ margin:0; background:#F5F7F9; }
 
 
 <!-- ═══════════════════════════════ ENGINEERING METHOD ═══════════════════════════════ -->
-<section class="rlb-band rlb-tone" id="method">
-  <div class="rlb-w">
-    <h2 class="t-display" data-r>Engineering Method</h2>
-    <p class="t-body" data-r style="--d:80ms">
-      I work complicated problems with a small, well-ordered sequence that someone else
-      can repeat and still reach the same answer. This is the loop I apply to a
-      combustion turbine in the field.
-    </p>
+<section class="rlb-band rlb-tone" id="method" data-zone="experience">
+  <div class="rlb-w rlb-meth__layout">
+    <div class="rlb-meth__pin">
+      <h2 class="t-display" data-r>Engineering Method</h2>
+      <p class="t-body" data-r style="--d:80ms">
+        I work complicated problems with a small, well-ordered sequence that someone else
+        can repeat and still reach the same answer. This is the loop I apply to a
+        combustion turbine in the field.
+      </p>
+      <ol class="rlb-meth__dots" data-spy-list aria-hidden="true">
+        <li data-spy-key="meth-1" class="active"><b>01</b><span>Observe</span></li>
+        <li data-spy-key="meth-2"><b>02</b><span>Understand</span></li>
+        <li data-spy-key="meth-3"><b>03</b><span>Diagnose</span></li>
+        <li data-spy-key="meth-4"><b>04</b><span>Correct</span></li>
+        <li data-spy-key="meth-5"><b>05</b><span>Measure</span></li>
+        <li data-spy-key="meth-6"><b>06</b><span>Record</span></li>
+      </ol>
+    </div>
 
-    <div class="rlb-meth">
-      <div class="rlb-meth__i" data-r><span class="rlb-meth__n">01</span><div><p class="rlb-meth__w">Observe</p><p class="t-body rlb-meth__d">I collect what the system is actually doing before anyone explains what it should be doing.</p></div></div>
-      <div class="rlb-meth__i" data-r><span class="rlb-meth__n">02</span><div><p class="rlb-meth__w">Understand</p><p class="t-body rlb-meth__d">I map the interactions and constraints. Most surprises live between subsystems, not inside them.</p></div></div>
-      <div class="rlb-meth__i" data-r><span class="rlb-meth__n">03</span><div><p class="rlb-meth__w">Diagnose</p><p class="t-body rlb-meth__d">I isolate cause from symptom with evidence and name the failure mode precisely.</p></div></div>
-      <div class="rlb-meth__i" data-r><span class="rlb-meth__n">04</span><div><p class="rlb-meth__w">Correct</p><p class="t-body rlb-meth__d">I design the correction: a change, a countermeasure, or a process that removes the cause.</p></div></div>
-      <div class="rlb-meth__i" data-r><span class="rlb-meth__n">05</span><div><p class="rlb-meth__w">Measure</p><p class="t-body rlb-meth__d">I confirm results with data, since only a measured change counts as a real one.</p></div></div>
-      <div class="rlb-meth__i" data-r><span class="rlb-meth__n">06</span><div><p class="rlb-meth__w">Record</p><p class="t-body rlb-meth__d">I document the work and hand it back in a state that holds without supervision.</p></div></div>
+    <div class="rlb-meth__steps">
+      <div class="rlb-meth__i" id="meth-1" data-r><span class="rlb-meth__n">01</span><div><p class="rlb-meth__w">Observe</p><p class="t-body rlb-meth__d">I collect what the system is actually doing before anyone explains what it should be doing.</p></div></div>
+      <div class="rlb-meth__i" id="meth-2" data-r><span class="rlb-meth__n">02</span><div><p class="rlb-meth__w">Understand</p><p class="t-body rlb-meth__d">I map the interactions and constraints. Most surprises live between subsystems, not inside them.</p></div></div>
+      <div class="rlb-meth__i" id="meth-3" data-r><span class="rlb-meth__n">03</span><div><p class="rlb-meth__w">Diagnose</p><p class="t-body rlb-meth__d">I isolate cause from symptom with evidence and name the failure mode precisely.</p></div></div>
+      <div class="rlb-meth__i" id="meth-4" data-r><span class="rlb-meth__n">04</span><div><p class="rlb-meth__w">Correct</p><p class="t-body rlb-meth__d">I design the correction: a change, a countermeasure, or a process that removes the cause.</p></div></div>
+      <div class="rlb-meth__i" id="meth-5" data-r><span class="rlb-meth__n">05</span><div><p class="rlb-meth__w">Measure</p><p class="t-body rlb-meth__d">I confirm results with data, since only a measured change counts as a real one.</p></div></div>
+      <div class="rlb-meth__i" id="meth-6" data-r><span class="rlb-meth__n">06</span><div><p class="rlb-meth__w">Record</p><p class="t-body rlb-meth__d">I document the work and hand it back in a state that holds without supervision.</p></div></div>
     </div>
   </div>
 </section>
 
 
 <!-- ═══════════════════════════════ CAREER TIMELINE ═══════════════════════════════ -->
-<section class="rlb-band" id="timeline">
+<section class="rlb-band" id="timeline" data-zone="timeline">
   <div class="rlb-w">
     <h2 class="t-display" data-r>Career Timeline</h2>
     <div class="rlb-time">
+      <div class="rlb-time__line" aria-hidden="true"></div>
       <div class="rlb-time__i" data-r>
         <span class="rlb-time__y t-mono">2018</span>
         <h3 class="rlb-time__t">University of Central Florida</h3>
@@ -796,7 +440,7 @@ body{ margin:0; background:#F5F7F9; }
 
 
 <!-- ═══════════════════════════════ TECHNICAL TOOLKIT & CREDENTIALS ═══════════════════════════════ -->
-<section class="rlb-band rlb-tone" id="credentials">
+<section class="rlb-band rlb-tone" id="credentials" data-zone="timeline">
   <div class="rlb-w">
     <h2 class="t-display" data-r>Technical Toolkit &amp; Credentials</h2>
     <div class="rlb-cred__g" data-r style="--d:80ms">
@@ -845,7 +489,7 @@ body{ margin:0; background:#F5F7F9; }
 
 
 <!-- ═══════════════════════════════ EDUCATION ═══════════════════════════════ -->
-<section class="rlb-band" id="education">
+<section class="rlb-band" id="education" data-zone="timeline">
   <div class="rlb-w">
     <h2 class="t-display" data-r>Education</h2>
     <div class="rlb-edu" data-r style="--d:80ms">
@@ -871,9 +515,9 @@ body{ margin:0; background:#F5F7F9; }
 
 
 <!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
-<section class="rlb-band rlb-dark" id="contact">
+<section class="rlb-band rlb-dark" id="contact" data-zone="contact">
   <div class="rlb-w">
-    <h2 class="t-hero rlb-close__name" data-r aria-label="Rayan Lababidi">Rayan<br>Lababidi</h2>
+    <h2 class="t-hero rlb-close__name" data-mask aria-label="Rayan Lababidi">Rayan<br>Lababidi</h2>
 
     <div class="rlb-close__g">
       <div data-r>
@@ -915,123 +559,9 @@ body{ margin:0; background:#F5F7F9; }
 </main>
 </div>
 
-<script>
-(function () {
-  'use strict';
-  var doc = document;
-  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  var yr = doc.getElementById('yr');
-  if (yr) yr.textContent = new Date().getFullYear();
-
-  (function () {
-    var nav = doc.getElementById('nav');
-    if (!nav) return;
-    var burger = doc.getElementById('burger');
-    var drawer = doc.getElementById('drawer');
-    var last = window.pageYOffset;
-    var open = false;
-    var queued = false;
-
-    /* scroll-spy: several sections share one nav item (e.g. Expertise covers
-       Core Expertise, Field Engineering and Scale), so the active nav key is
-       looked up from whichever tracked section last crossed the line near
-       the top of the viewport — never hardcoded to a single section. */
-    var zoneOf = {
-      profile: 'profile',
-      expertise: 'expertise', commissioning: 'expertise', scale: 'expertise',
-      experience: 'experience', method: 'experience',
-      timeline: 'timeline', credentials: 'timeline', education: 'timeline',
-      contact: 'contact'
-    };
-    var sections = Object.keys(zoneOf)
-      .map(function (id) { return doc.getElementById(id); })
-      .filter(Boolean);
-    var navLinks = [].slice.call(doc.querySelectorAll('[data-nav]'));
-    var currentKey = null;
-    function setHere(key) {
-      if (key === currentKey) return;
-      currentKey = key;
-      navLinks.forEach(function (a) { a.classList.toggle('here', a.getAttribute('data-nav') === key); });
-    }
-
-    function frame() {
-      var y = window.pageYOffset;
-      nav.classList.toggle('set', y > 24);
-      if (!open) nav.classList.toggle('hid', y > last && y > 420);
-      last = y;
-
-      var line = 140; // px from top of viewport
-      var active = sections[0];
-      for (var i = 0; i < sections.length; i++) {
-        if (sections[i].getBoundingClientRect().top <= line) active = sections[i];
-      }
-      if (active) setHere(zoneOf[active.id]);
-      queued = false;
-    }
-    window.addEventListener('scroll', function () {
-      if (!queued) { queued = true; requestAnimationFrame(frame); }
-    }, { passive: true });
-    frame();
-
-    var darks = [].slice.call(doc.querySelectorAll('.rlb-dark'));
-    if (darks.length && 'IntersectionObserver' in window) {
-      var over = [];
-      var probe = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          var i = over.indexOf(e.target);
-          if (e.isIntersecting && i < 0) over.push(e.target);
-          if (!e.isIntersecting && i >= 0) over.splice(i, 1);
-        });
-        nav.classList.toggle('inv', over.length > 0);
-      }, { rootMargin: '-28px 0px -100% 0px', threshold: 0 });
-      darks.forEach(function (d) { probe.observe(d); });
-    }
-
-    if (burger && drawer) {
-      var links = [].slice.call(drawer.querySelectorAll('a'));
-      var toggle = function (want) {
-        open = want;
-        nav.classList.toggle('open', open);
-        drawer.classList.toggle('open', open);
-        nav.classList.remove('hid');
-        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-        doc.documentElement.style.overflow = open ? 'hidden' : '';
-        links.forEach(function (a, i) { a.style.transitionDelay = open ? (80 + i * 50) + 'ms' : '0ms'; });
-      };
-      burger.addEventListener('click', function () { toggle(!open); });
-      links.forEach(function (a) { a.addEventListener('click', function () { toggle(false); }); });
-      doc.addEventListener('keydown', function (e) { if (e.key === 'Escape' && open) toggle(false); });
-    }
-  })();
-
-  (function () {
-    var targets = [].slice.call(doc.querySelectorAll('[data-r],[data-stamp]'));
-    if (!targets.length) return;
-    if (calm || !('IntersectionObserver' in window)) {
-      targets.forEach(function (t) { t.classList.add('lit'); });
-      return;
-    }
-    var eye = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        e.target.classList.add('lit');
-        eye.unobserve(e.target);
-      });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0 });
-    targets.forEach(function (t) { eye.observe(t); });
-  })();
-
-  (function () {
-    var first = [].slice.call(doc.querySelectorAll('.rlb-hero [data-r], .rlb-hero [data-stamp]'));
-    if (!first.length) return;
-    if (!doc.fonts || !doc.fonts.ready) { first.forEach(function (t) { t.classList.add('lit'); }); return; }
-    var done = false;
-    function reveal() { if (done) return; done = true; first.forEach(function (t) { t.classList.add('lit'); }); }
-    doc.fonts.ready.then(reveal);
-    setTimeout(reveal, 1300);
-  })();
-})();
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="/assets/motion.js"></script>
 </body>
 </html>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Controls &amp; Instrumentation - Rayan Lababidi</title>
+<meta name="description" content="A field guide to controls and instrumentation: sensors, feedback loops, actuators, permissives, calibration and loop checks, and why bad instrumentation can look like a mechanical problem.">
+<meta name="author" content="Rayan Lababidi">
+<meta name="theme-color" content="#F5F7F9">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rayanlababidi.com/expertise/controls-instrumentation.html">
+
+<script>document.documentElement.className += ' rlb-js';</script>
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rayan Lababidi">
+<meta property="og:url" content="https://rayanlababidi.com/expertise/controls-instrumentation.html">
+<meta property="og:title" content="Controls & Instrumentation - Rayan Lababidi">
+<meta property="og:description" content="Sensors, feedback loops, actuators and permissives, and why bad instrumentation can look like a mechanical problem.">
+<meta property="og:image" content="https://rayanlababidi.com/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Controls & Instrumentation - Rayan Lababidi">
+<meta name="twitter:description" content="Sensors, feedback loops, actuators and permissives, and why bad instrumentation can look like a mechanical problem.">
+<meta name="twitter:image" content="https://rayanlababidi.com/og-cover.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Controls & Instrumentation",
+  "description": "A field guide to controls and instrumentation: sensors, feedback loops, actuators, permissives, calibration and loop checks, platform-neutral.",
+  "url": "https://rayanlababidi.com/expertise/controls-instrumentation.html",
+  "author": { "@id": "https://rayanlababidi.com/#rayan-lababidi" },
+  "publisher": { "@id": "https://rayanlababidi.com/#rayan-lababidi" },
+  "mainEntityOfPage": "https://rayanlababidi.com/expertise/controls-instrumentation.html",
+  "about": "Industrial controls and instrumentation"
+}
+</script>
+
+<link rel="preload" as="style" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800&family=Big+Shoulders+Text:wght@500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+</head>
+<body>
+<a class="rlb-skip" href="#main">Skip to content</a>
+<div class="rlb">
+<div class="rlb-progress" id="progress" aria-hidden="true"></div>
+
+<nav class="rlb-nav" id="nav">
+  <div class="rlb-w rlb-nav__in">
+    <a class="rlb-word" href="/" aria-label="Rayan Lababidi, home">Rayan Lababidi</a>
+    <div class="rlb-menu" id="menu">
+      <a href="/#profile">Profile</a>
+      <a href="/#expertise">Expertise</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#timeline">Timeline</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <button class="rlb-burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><span></span></button>
+  </div>
+</nav>
+<div class="rlb-drawer" id="drawer">
+  <a href="/#profile">Profile</a>
+  <a href="/#expertise">Expertise</a>
+  <a href="/#experience">Experience</a>
+  <a href="/#timeline">Timeline</a>
+  <a href="/#contact">Contact</a>
+  <div class="rlb-drawer__f">
+    <span>ORLANDO, FL</span>
+    <span>SIEMENS ENERGY</span>
+  </div>
+</div>
+
+<main id="main">
+
+<header class="rlb-article-hero">
+  <div class="rlb-w">
+    <a class="rlb-article-hero__back" href="/#expertise" data-r><span aria-hidden="true">←</span> Portfolio</a>
+    <p class="t-label rlb-article-hero__kicker" data-r style="--d:60ms">Discipline 03 / 06: Field Guide</p>
+    <h1 class="t-hero rlb-article-hero__title" data-mask style="--d:100ms">Controls &amp;<br>Instrumentation</h1>
+    <p class="t-lede rlb-article-hero__dek" data-r style="--d:160ms">
+      A control system is only as trustworthy as the instruments feeding it. This is the general
+      shape of that relationship (sensors, loops, permissives and calibration) described in
+      platform-neutral terms.
+    </p>
+    <div class="rlb-article-hero__meta" data-r style="--d:220ms">
+      <span><b>Field Guide</b></span>
+      <span>General Industry Principles</span>
+      <span>Controls Systems</span>
+    </div>
+  </div>
+</header>
+
+<article class="rlb-article">
+  <div class="rlb-w rlb-article__layout">
+    <nav class="rlb-article__rail" data-spy-list aria-label="Article sections">
+      <a href="#s1" data-spy-key="s1" class="active"><b>01</b> Sensors &amp; Transmitters</a>
+      <a href="#s2" data-spy-key="s2"><b>02</b> The Feedback Loop</a>
+      <a href="#s3" data-spy-key="s3"><b>03</b> Actuators &amp; Control Valves</a>
+      <a href="#s4" data-spy-key="s4"><b>04</b> Permissives &amp; Interlocks</a>
+      <a href="#s5" data-spy-key="s5"><b>05</b> Calibration &amp; Loop Checks</a>
+      <a href="#s6" data-spy-key="s6"><b>06</b> When Instrumentation Lies</a>
+    </nav>
+
+    <div class="rlb-article__body">
+      <section class="rlb-article__section" id="s1" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">01</span><h2 class="rlb-article__section__t">Sensors &amp; Transmitters</h2></div>
+        <p class="t-body">A sensor measures a physical quantity: pressure, temperature, flow, vibration, position. A transmitter converts that physical measurement into a signal a control system can actually use, typically an electrical or digital value proportional to the measured quantity. Every decision a control system makes is only as good as the accuracy of that conversion.</p>
+        <p class="t-body">In general industry terms, the entire control philosophy rests on a simple premise: the control system doesn't know what's really happening in the process. It only knows what its sensors tell it.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s2" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">02</span><h2 class="rlb-article__section__t">The Feedback Loop</h2></div>
+        <p class="t-body">A feedback loop is the basic unit of automatic control: a sensor measures the current state, a controller compares that state to a target (a "setpoint" concept, not a specific value), and an actuator adjusts the process to close the gap between the two. This cycle repeats continuously.</p>
+        <div class="rlb-flow" data-r>
+          <div class="rlb-flow__step"><b>Loop</b><span>Measure</span></div>
+          <div class="rlb-flow__step"><b>Loop</b><span>Compare</span></div>
+          <div class="rlb-flow__step"><b>Loop</b><span>Adjust</span></div>
+          <div class="rlb-flow__step"><b>Loop</b><span>Re-measure</span></div>
+        </div>
+        <p class="t-body">A well-behaved loop settles smoothly toward its target. A poorly tuned one can overshoot, oscillate, or respond too slowly, and diagnosing which of those is happening, and why, is a core controls skill.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s3" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">03</span><h2 class="rlb-article__section__t">Actuators &amp; Control Valves</h2></div>
+        <p class="t-body">An actuator is whatever physically executes the controller's decision: a motor, a valve operator, a variable-speed drive. A control valve is one of the most common actuators in industrial process systems: it changes its position to regulate flow, and the control system commands that position based on what the feedback loop calls for.</p>
+        <p class="t-body">The physical response of an actuator (how quickly and precisely it actually moves to the commanded position) is itself something that has to be verified, not assumed. A control loop can be tuned perfectly and still misbehave if the valve underneath it doesn't move the way the logic expects.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s4" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">04</span><h2 class="rlb-article__section__t">Permissives &amp; Interlocks, Conceptually</h2></div>
+        <p class="t-body">A permissive is a required condition, evaluated before an action is allowed to proceed. An interlock is a protective response, triggered automatically when a monitored condition crosses into unsafe territory. Together, they form the logical safety net around a process: encoding, in software and hardware, the conditions under which it's acceptable for equipment to start, continue running, or must be stopped.</p>
+        <p class="t-body">A DCS (a distributed control system) is the general category of platform that hosts this logic at scale in a modern industrial facility, coordinating many individual loops, permissives and interlocks as one coherent system rather than isolated components.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s5" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">05</span><h2 class="rlb-article__section__t">Calibration &amp; Loop Checks</h2></div>
+        <p class="t-body">Calibration verifies that an instrument's output accurately represents the physical quantity it's measuring, across its full range, not just at one convenient point. A loop check goes a step further: it verifies the entire signal path, from the physical sensor through wiring, through any intermediate processing, all the way to where the control system or an operator actually reads the value.</p>
+        <p class="t-body">Signal verification is the habit of never trusting a displayed value simply because it looks reasonable. It means confirming, physically, that what's displayed matches what's actually happening at the source.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s6" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">06</span><h2 class="rlb-article__section__t">Why Bad Instrumentation Can Look Like a Mechanical Problem</h2></div>
+        <blockquote class="t-pull rlb-pull" data-r>The machine is rarely lying. The sensor sometimes is.</blockquote>
+        <p class="t-body">One of the most common traps in industrial troubleshooting is chasing a mechanical cause for a symptom that's actually an instrumentation fault. A failed or drifting sensor can make a perfectly healthy machine appear to be misbehaving, and a control system reacting correctly to bad data can produce very convincing, very misleading symptoms.</p>
+        <p class="t-body">This is why controls and instrumentation knowledge matters even for engineers whose primary focus is mechanical: separating "the machine is actually doing this" from "the instrumentation says the machine is doing this" is often the first and most important step in any real diagnosis.</p>
+      </section>
+    </div>
+  </div>
+</article>
+
+<footer class="rlb-article__foot">
+  <div class="rlb-w">
+    <h2 class="t-display" data-r>Explore Another Discipline</h2>
+    <div class="rlb-explore" data-r style="--d:80ms">
+      <a href="/expertise/commissioning.html"><b>01</b><span>Mechanical Commissioning</span></a>
+      <a href="/expertise/combustion-tuning.html"><b>02</b><span>Combustion Tuning</span></a>
+      <a href="/expertise/root-cause-troubleshooting.html"><b>04</b><span>Root-Cause Troubleshooting</span></a>
+      <a href="/expertise/outage-execution.html"><b>05</b><span>Outage Execution</span></a>
+      <a href="/expertise/field-engineering.html"><b>06</b><span>Field Engineering</span></a>
+    </div>
+    <a class="rlb-btn rlb-article__back" href="/">Back to Portfolio <span aria-hidden="true">→</span></a>
+  </div>
+</footer>
+
+<div class="rlb-article-foot-bar rlb-w">
+  <span>© <span id="yr">2026</span> Rayan Lababidi</span>
+  <div><a href="mailto:hello@rayanlababidi.com">Email</a><a href="/">Portfolio</a></div>
+</div>
+
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="/assets/motion.js"></script>
+</body>
+</html>

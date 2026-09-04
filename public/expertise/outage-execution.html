@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Outage Execution - Rayan Lababidi</title>
+<meta name="description" content="A field guide to outage execution: planning, inspections, maintenance windows, re-commissioning, coordination between disciplines, and testing before returning equipment to service.">
+<meta name="author" content="Rayan Lababidi">
+<meta name="theme-color" content="#F5F7F9">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rayanlababidi.com/expertise/outage-execution.html">
+
+<script>document.documentElement.className += ' rlb-js';</script>
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rayan Lababidi">
+<meta property="og:url" content="https://rayanlababidi.com/expertise/outage-execution.html">
+<meta property="og:title" content="Outage Execution - Rayan Lababidi">
+<meta property="og:description" content="Planning, inspections, maintenance windows, re-commissioning and configuration control, general principles of outage execution.">
+<meta property="og:image" content="https://rayanlababidi.com/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Outage Execution - Rayan Lababidi">
+<meta name="twitter:description" content="Planning, inspections, maintenance windows, re-commissioning and configuration control, general principles of outage execution.">
+<meta name="twitter:image" content="https://rayanlababidi.com/og-cover.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Outage Execution",
+  "description": "A field guide to outage execution: planning, inspections, maintenance windows, re-commissioning and configuration control.",
+  "url": "https://rayanlababidi.com/expertise/outage-execution.html",
+  "author": { "@id": "https://rayanlababidi.com/#rayan-lababidi" },
+  "publisher": { "@id": "https://rayanlababidi.com/#rayan-lababidi" },
+  "mainEntityOfPage": "https://rayanlababidi.com/expertise/outage-execution.html",
+  "about": "Industrial outage planning and execution"
+}
+</script>
+
+<link rel="preload" as="style" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800&family=Big+Shoulders+Text:wght@500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+</head>
+<body>
+<a class="rlb-skip" href="#main">Skip to content</a>
+<div class="rlb">
+<div class="rlb-progress" id="progress" aria-hidden="true"></div>
+
+<nav class="rlb-nav" id="nav">
+  <div class="rlb-w rlb-nav__in">
+    <a class="rlb-word" href="/" aria-label="Rayan Lababidi, home">Rayan Lababidi</a>
+    <div class="rlb-menu" id="menu">
+      <a href="/#profile">Profile</a>
+      <a href="/#expertise">Expertise</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#timeline">Timeline</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <button class="rlb-burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><span></span></button>
+  </div>
+</nav>
+<div class="rlb-drawer" id="drawer">
+  <a href="/#profile">Profile</a>
+  <a href="/#expertise">Expertise</a>
+  <a href="/#experience">Experience</a>
+  <a href="/#timeline">Timeline</a>
+  <a href="/#contact">Contact</a>
+  <div class="rlb-drawer__f">
+    <span>ORLANDO, FL</span>
+    <span>SIEMENS ENERGY</span>
+  </div>
+</div>
+
+<main id="main">
+
+<header class="rlb-article-hero">
+  <div class="rlb-w">
+    <a class="rlb-article-hero__back" href="/#expertise" data-r><span aria-hidden="true">←</span> Portfolio</a>
+    <p class="t-label rlb-article-hero__kicker" data-r style="--d:60ms">Discipline 05 / 06: Field Guide</p>
+    <h1 class="t-hero rlb-article-hero__title" data-mask style="--d:100ms">Outage<br>Execution</h1>
+    <p class="t-lede rlb-article-hero__dek" data-r style="--d:160ms">
+      An outage compresses a year's worth of maintenance into a fixed, unforgiving window. This is
+      the general shape of how that window gets planned, executed, and closed out safely.
+    </p>
+    <div class="rlb-article-hero__meta" data-r style="--d:220ms">
+      <span><b>Field Guide</b></span>
+      <span>General Industry Principles</span>
+      <span>Maintenance &amp; Return to Service</span>
+    </div>
+  </div>
+</header>
+
+<article class="rlb-article">
+  <div class="rlb-w rlb-article__layout">
+    <nav class="rlb-article__rail" data-spy-list aria-label="Article sections">
+      <a href="#s1" data-spy-key="s1" class="active"><b>01</b> Why Outages Exist</a>
+      <a href="#s2" data-spy-key="s2"><b>02</b> Planning &amp; the Maintenance Window</a>
+      <a href="#s3" data-spy-key="s3"><b>03</b> Inspections</a>
+      <a href="#s4" data-spy-key="s4"><b>04</b> Coordination Between Disciplines</a>
+      <a href="#s5" data-spy-key="s5"><b>05</b> Configuration Control</a>
+      <a href="#s6" data-spy-key="s6"><b>06</b> Testing Before Return to Service</a>
+    </nav>
+
+    <div class="rlb-article__body">
+      <section class="rlb-article__section" id="s1" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">01</span><h2 class="rlb-article__section__t">Why Outages Exist</h2></div>
+        <p class="t-body">Large rotating equipment accumulates wear, and some inspections and maintenance tasks can only be performed while the machine is offline. An outage is a planned, scheduled period where equipment is deliberately taken out of service so that work can be done safely and thoroughly, the alternative to waiting for something to fail unplanned.</p>
+        <p class="t-body">The tension built into every outage is straightforward: the equipment isn't earning while it's offline, so the work has to be scoped precisely, planned in advance, and executed efficiently, without cutting corners on safety or quality to save time.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s2" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">02</span><h2 class="rlb-article__section__t">Planning &amp; the Maintenance Window</h2></div>
+        <p class="t-body">An outage schedule is built well before the equipment actually stops, typically down to the hour once the work begins. Every task is sequenced against every other task (some can run in parallel, some absolutely cannot start until a prior task finishes) and the whole plan accounts for the availability of people, parts, and specialized equipment.</p>
+        <div class="rlb-flow" data-r>
+          <div class="rlb-flow__step"><b>Phase</b><span>Plan</span></div>
+          <div class="rlb-flow__step"><b>Phase</b><span>Shutdown</span></div>
+          <div class="rlb-flow__step"><b>Phase</b><span>Inspect &amp; Maintain</span></div>
+          <div class="rlb-flow__step"><b>Phase</b><span>Re-Commission</span></div>
+          <div class="rlb-flow__step"><b>Phase</b><span>Return to Service</span></div>
+        </div>
+      </section>
+
+      <section class="rlb-article__section" id="s3" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">03</span><h2 class="rlb-article__section__t">Inspections</h2></div>
+        <p class="t-body">Inspections during an outage generally fall into two categories: planned inspections, scoped in advance based on the equipment's maintenance history and manufacturer guidance, and condition-based findings: things discovered once components are actually opened up and examined that weren't visible while the equipment was running.</p>
+        <p class="t-body">A well-run outage builds in some contingency for the second category, because a thorough inspection sometimes finds something that needs to be addressed before the equipment can safely return to service, even if it wasn't in the original scope.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s4" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">04</span><h2 class="rlb-article__section__t">Coordination Between Disciplines</h2></div>
+        <blockquote class="t-pull rlb-pull" data-r>An outage is one schedule with many hands on it, all reading from the same page.</blockquote>
+        <p class="t-body">An outage brings together mechanical technicians, electrical crews, controls specialists, safety personnel, and plant operations staff, often from multiple organizations, all working against the same shared schedule. Nothing about that coordination happens by accident. It requires clear communication, a shared understanding of sequence and dependency, and a single source of truth for what state the equipment is actually in at any given moment.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s5" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">05</span><h2 class="rlb-article__section__t">Configuration Control</h2></div>
+        <p class="t-body">Whenever a component is removed, replaced, or adjusted during an outage, that change needs to be tracked deliberately: what was changed, why, by whom, and what the new configuration is. Configuration control is the discipline that keeps a complex machine's actual state, documentation, and everyone's understanding of it all in agreement, so nothing gets returned to service in a state nobody can fully account for.</p>
+      </section>
+
+      <section class="rlb-article__section" id="s6" data-r>
+        <div class="rlb-article__section__h"><span class="rlb-article__section__n">06</span><h2 class="rlb-article__section__t">Testing Before Returning Equipment to Service</h2></div>
+        <p class="t-body">Before an outage closes out, the equipment goes through a re-commissioning sequence conceptually similar to a first commissioning: functional checks, verification that everything disturbed during the outage still works correctly, and a controlled, incremental startup rather than an immediate return to full operation.</p>
+        <p class="t-body">The underlying principle is the same one that governs commissioning generally: the machine's readiness is proven with evidence, not assumed because the maintenance work is finished. An outage isn't complete until that verification is, whatever the calendar says.</p>
+      </section>
+    </div>
+  </div>
+</article>
+
+<footer class="rlb-article__foot">
+  <div class="rlb-w">
+    <h2 class="t-display" data-r>Explore Another Discipline</h2>
+    <div class="rlb-explore" data-r style="--d:80ms">
+      <a href="/expertise/commissioning.html"><b>01</b><span>Mechanical Commissioning</span></a>
+      <a href="/expertise/combustion-tuning.html"><b>02</b><span>Combustion Tuning</span></a>
+      <a href="/expertise/controls-instrumentation.html"><b>03</b><span>Controls &amp; Instrumentation</span></a>
+      <a href="/expertise/root-cause-troubleshooting.html"><b>04</b><span>Root-Cause Troubleshooting</span></a>
+      <a href="/expertise/field-engineering.html"><b>06</b><span>Field Engineering</span></a>
+    </div>
+    <a class="rlb-btn rlb-article__back" href="/">Back to Portfolio <span aria-hidden="true">→</span></a>
+  </div>
+</footer>
+
+<div class="rlb-article-foot-bar rlb-w">
+  <span>© <span id="yr">2026</span> Rayan Lababidi</span>
+  <div><a href="mailto:hello@rayanlababidi.com">Email</a><a href="/">Portfolio</a></div>
+</div>
+
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="/assets/motion.js"></script>
+</body>
+</html>
